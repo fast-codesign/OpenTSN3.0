@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes>
+
+
+<node imac="2" sync_type="master" port_type="248">
+<link local_port="0" remote_port="0" remote_device="switch" addr="4"/>
+<link local_port="1" remote_port="1" remote_device="switch" addr="3"/>
+<link local_port="2" remote_port="0" remote_device="controler" addr="0"/>
+<link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
+</node>
+
+<node imac="3" sync_type="slave" port_type="252">
+<link local_port="0" remote_port="0" remote_device="switch" addr="1"/>
+<link local_port="1" remote_port="1" remote_device="switch" addr="2"/>
+<link local_port="2" remote_port="0" remote_device="endstation" addr="0"/>
+<link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
+</node>
+
+<node imac="4" sync_type="slave" port_type="252">
+<link local_port="0" remote_port="0" remote_device="switch" addr="2"/>
+<link local_port="1" remote_port="1" remote_device="switch" addr="1"/>
+<link local_port="2" remote_port="0" remote_device="endstation" addr="0"/>
+<link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
+</node>
+
+<node imac="1" sync_type="slave" port_type="252"> <!-- 8bit,port_type使用bitmap的形式，0代表交换口，1代表终端口 --> 
+<link local_port="0" remote_port="0" remote_device="switch" addr="3"/>
+<!-- local_id表示本地端口号，remote_id表示远端设备的端口号，
+remote_devicer表示远端设备的设备类型，
+addr表示远端设备的地址，如果设备类型是控制器和交换机，则表示imac地址，如果是终端，则表示终端标签号 --> 
+<link local_port="1" remote_port="1" remote_device="switch" addr="0"/>
+<link local_port="2" remote_port="0" remote_device="endstation" addr="0"/>
+<link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
+</node>
+</nodes>
+
