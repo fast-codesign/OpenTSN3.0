@@ -1,0 +1,2 @@
+create_project.tcl:详细使用请见OpenTSN3.0-centrilized\Hardware\doc目录下的TSN交换机使用手册V1.0第三章节
+Makefile:详细使用请见OpenTSN3.0-centrilized\Hardware\doc目录下的TSN交换机使用手册V1.0第三章节
