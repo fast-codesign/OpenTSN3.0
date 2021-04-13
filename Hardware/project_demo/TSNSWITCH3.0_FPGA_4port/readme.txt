@@ -1,9 +1,4 @@
-#OpenTSN3.0
-#user's guide
-Generate IP cores used in the project in Inter Quartus;there is detailed information in the directory "./ipcore/readme.txt".
-
-Ensure that Inter Quartus toolchain components are in PATH.
-
-run "make" to compile the project, then wait; "compile finish" is printed after compile finishes and the file named " TSN_FPGA_4port.sof" is created in the directory "./output_files/".
-
-run "make clean" to clean intermediate files and final files.
+﻿本目录中各文件夹说明如下：
+ipcore：        TSN交换机4口工程使用的IP核参数配置以及存放路径
+rtl：           TSN交换机4口工程在arria 10上的一些外围逻辑
+script file：   quartus 19.1以上版本工程编译文件，具体操作参看《TSN交换机使用手册》
