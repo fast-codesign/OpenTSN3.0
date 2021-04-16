@@ -1,6 +1,6 @@
 ﻿因针对不同的平台或者不同的FPGA器件，所使用的IP核生成存在差异，所以ip核文件需要自行依据提供的IP核配置参数去生成ip核.
 TSN网卡硬件逻辑源码中总共使用到14个ip核文件，IP核详细配置参数如下：
-（1）IP核名称: altera_iopll
+（1）IP核名称: clk125M_50M125M
      Reference Clock Frequency: 125.0 MHz
      Number Of Clocks : 2
      Clock Name of outclk0 : 50MHz
