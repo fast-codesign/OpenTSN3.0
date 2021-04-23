@@ -1,14 +1,14 @@
-// Copyright (C) 1953-2021 NUDT
-// file name - Makefile 
-// Version: Makefile_V1.0
-// Created:
-//         by - fenglin 
-//         at - 10.2020
-////////////////////////////////////////////////////////////////////////////
-// Description:
-//		  used to compile project to generate programming file.
-//				 
-///////////////////////////////////////////////////////////////////////////
+#// Copyright (C) 1953-2021 NUDT
+#// file name - Makefile 
+#// Version: Makefile_V1.0
+#// Created:
+#//         by - fenglin 
+#//         at - 10.2020
+#////////////////////////////////////////////////////////////////////////////
+#// Description:
+#//		  used to compile project to generate programming file.
+#//				 
+#///////////////////////////////////////////////////////////////////////////
 .PHONY: all project clean
 
 all: project run_synth run_fit run_asm run_sta run_eda
