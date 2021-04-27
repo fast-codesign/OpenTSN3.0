@@ -23,6 +23,7 @@ TSN网卡硬件逻辑源码中总共使用到12个ip核文件，IP核详细配置参数如下:
 
 number_2 ip core: altera_eth_tse
     Ip_core_name: sgmii_pcs_share
+    Component:10AX048H2F34I2SG
     Core variation : 10/100/1000Mb Ethernet MAC with 1000BASE-X/sgmii pcs
     Number of ports : 4
     Transceiver type : LVDS I/O

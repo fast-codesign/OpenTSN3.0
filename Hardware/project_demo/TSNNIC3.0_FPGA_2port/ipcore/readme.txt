@@ -8,6 +8,7 @@ TSN网卡硬件逻辑源码中总共使用到14个ip核文件，IP核详细配�
 
 （2）IP核名称: sgmii_pcs_share
     Core variation : 10/100/1000Mb Ethernet MAC with 1000BASE-X/sgmii pcs
+    Component:10AX048H2F34I2SG
     Number of ports : 4
     Transceiver type : LVDS I/O
     PHY ID : 0x00000000
