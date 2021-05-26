@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes sync_period="100" master_imac="0" sync_flowid="4096">
+<!-- sync_period表示时间同步周期，单位为ms，master_imac表示主设备的imac地址，sync_flowid表示组播的flowid -->   
+
+<node imac="2" port_mode="0"> <!-- port_mode使用bitmap的形式，0代表协作模式，只接收映射过的报文，1代表非协作模式，可以接收所有报文 -->            
+<entry flowid="0" outport="4"/>    <!-- 同步响应报文-->   
+<entry flowid="1" outport="8"/>    <!-- 网卡3配置报文 --> 
+<entry flowid="2" outport="256"/>  <!-- 交换机2配置报文 --> 
+<entry flowid="3" outport="2"/>    <!-- 交换机1配置报文 -->
+<entry flowid="4" outport="2"/>    <!-- 网卡1配置报文 -->
+<entry flowid="5" outport="2"/>    <!-- 网卡2配置报文 -->
+</node>
+
+<node imac="1" port_mode="240"> <!-- port_mode使用bitmap的形式，0代表协作模式，只接收映射过的报文，1代表非协作模式，可以接收所有报文 -->            
+</node>  
+<node imac="3" port_mode="0">      <!-- 同步响应报文-->   
+<entry flowid="0" outport="1"/>  
+<entry flowid="1" outport="1"/> 
+<entry flowid="2" outport="1"/>  
+<entry flowid="3" outport="256"/>  <!-- 交换机1配置报文 -->
+<entry flowid="4" outport="4"/>    <!-- 网卡1配置报文 -->
+<entry flowid="5" outport="8"/>    <!-- 网卡2配置报文 -->
+</node>
+
+<node imac="4" port_mode="240"> 
+</node>
+
+<node imac="5" port_mode="240"> 
+</node>
+</nodes>
+
