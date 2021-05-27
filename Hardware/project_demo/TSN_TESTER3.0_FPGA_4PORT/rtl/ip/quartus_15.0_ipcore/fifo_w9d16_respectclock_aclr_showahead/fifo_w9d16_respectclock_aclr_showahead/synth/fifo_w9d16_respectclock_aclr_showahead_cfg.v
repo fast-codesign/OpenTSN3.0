@@ -1,0 +1,5 @@
+config fifo_w9d16_respectclock_aclr_showahead_cfg;
+		design fifo_w9d16_respectclock_aclr_showahead;
+		instance fifo_w9d16_respectclock_aclr_showahead.fifo_0 use fifo_w9d16_respectclock_aclr_showahead_fifo_150.fifo_w9d16_respectclock_aclr_showahead_fifo_150_od6sfpa;
+endconfig
+

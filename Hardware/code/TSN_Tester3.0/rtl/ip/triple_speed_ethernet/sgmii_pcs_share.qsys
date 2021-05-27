@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element eth_tse_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="10AX048H2F34I2SG" />
+ <parameter name="deviceFamily" value="Arria 10" />
+ <parameter name="deviceSpeedGrade" value="2" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="control_port"
+   internal="eth_tse_0.control_port"
+   type="avalon"
+   dir="end">
+  <port name="reg_data_out" internal="reg_data_out" />
+  <port name="reg_rd" internal="reg_rd" />
+  <port name="reg_data_in" internal="reg_data_in" />
+  <port name="reg_wr" internal="reg_wr" />
+  <port name="reg_busy" internal="reg_busy" />
+  <port name="reg_addr" internal="reg_addr" />
+ </interface>
+ <interface
+   name="control_port_clock_connection"
+   internal="eth_tse_0.control_port_clock_connection"
+   type="clock"
+   dir="end">
+  <port name="clk" internal="clk" />
+ </interface>
+ <interface name="mac_gmii_connection" internal="eth_tse_0.mac_gmii_connection" />
+ <interface name="mac_mii_connection" internal="eth_tse_0.mac_mii_connection" />
+ <interface name="mac_misc_connection" internal="eth_tse_0.mac_misc_connection" />
+ <interface
+   name="mac_misc_connection_0"
+   internal="eth_tse_0.mac_misc_connection_0"
+   type="conduit"
+   dir="end">
+  <port name="magic_wakeup_0" internal="magic_wakeup_0" />
+  <port name="magic_sleep_n_0" internal="magic_sleep_n_0" />
+  <port name="tx_crc_fwd_0" internal="tx_crc_fwd_0" />
+ </interface>
+ <interface
+   name="mac_misc_connection_1"
+   internal="eth_tse_0.mac_misc_connection_1"
+   type="conduit"
+   dir="end">
+  <port name="magic_wakeup_1" internal="magic_wakeup_1" />
+  <port name="magic_sleep_n_1" internal="magic_sleep_n_1" />
+  <port name="tx_crc_fwd_1" internal="tx_crc_fwd_1" />
+ </interface>
+ <interface
+   name="mac_misc_connection_2"
+   internal="eth_tse_0.mac_misc_connection_2"
+   type="conduit"
+   dir="end">
+  <port name="magic_wakeup_2" internal="magic_wakeup_2" />
+  <port name="magic_sleep_n_2" internal="magic_sleep_n_2" />
+  <port name="tx_crc_fwd_2" internal="tx_crc_fwd_2" />
+ </interface>
+ <interface
+   name="mac_misc_connection_3"
+   internal="eth_tse_0.mac_misc_connection_3"
+   type="conduit"
+   dir="end">
+  <port name="magic_wakeup_3" internal="magic_wakeup_3" />
+  <port name="magic_sleep_n_3" internal="magic_sleep_n_3" />
+  <port name="tx_crc_fwd_3" internal="tx_crc_fwd_3" />
+ </interface>
+ <interface
+   name="mac_rx_clock_connection_0"
+   internal="eth_tse_0.mac_rx_clock_connection_0"
+   type="clock"
+   dir="start">
+  <port name="mac_rx_clk_0" internal="mac_rx_clk_0" />
+ </interface>
+ <interface
+   name="mac_rx_clock_connection_1"
+   internal="eth_tse_0.mac_rx_clock_connection_1"
+   type="clock"
+   dir="start">
+  <port name="mac_rx_clk_1" internal="mac_rx_clk_1" />
+ </interface>
+ <interface
+   name="mac_rx_clock_connection_2"
+   internal="eth_tse_0.mac_rx_clock_connection_2"
+   type="clock"
+   dir="start">
+  <port name="mac_rx_clk_2" internal="mac_rx_clk_2" />
+ </interface>
+ <interface
+   name="mac_rx_clock_connection_3"
+   internal="eth_tse_0.mac_rx_clock_connection_3"
+   type="clock"
+   dir="start">
+  <port name="mac_rx_clk_3" internal="mac_rx_clk_3" />
+ </interface>
+ <interface
+   name="mac_status_connection"
+   internal="eth_tse_0.mac_status_connection" />
+ <interface
+   name="mac_tx_clock_connection_0"
+   internal="eth_tse_0.mac_tx_clock_connection_0"
+   type="clock"
+   dir="start">
+  <port name="mac_tx_clk_0" internal="mac_tx_clk_0" />
+ </interface>
+ <interface
+   name="mac_tx_clock_connection_1"
+   internal="eth_tse_0.mac_tx_clock_connection_1"
+   type="clock"
+   dir="start">
+  <port name="mac_tx_clk_1" internal="mac_tx_clk_1" />
+ </interface>
+ <interface
+   name="mac_tx_clock_connection_2"
+   internal="eth_tse_0.mac_tx_clock_connection_2"
+   type="clock"
+   dir="start">
+  <port name="mac_tx_clk_2" internal="mac_tx_clk_2" />
+ </interface>
+ <interface
+   name="mac_tx_clock_connection_3"
+   internal="eth_tse_0.mac_tx_clock_connection_3"
+   type="clock"
+   dir="start">
+  <port name="mac_tx_clk_3" internal="mac_tx_clk_3" />
+ </interface>
+ <interface
+   name="pcs_mac_rx_clock_connection"
+   internal="eth_tse_0.pcs_mac_rx_clock_connection" />
+ <interface
+   name="pcs_mac_tx_clock_connection"
+   internal="eth_tse_0.pcs_mac_tx_clock_connection" />
+ <interface
+   name="pcs_ref_clk_clock_connection"
+   internal="eth_tse_0.pcs_ref_clk_clock_connection"
+   type="clock"
+   dir="end">
+  <port name="ref_clk" internal="ref_clk" />
+ </interface>
+ <interface name="receive" internal="eth_tse_0.receive" />
+ <interface
+   name="receive_0"
+   internal="eth_tse_0.receive_0"
+   type="avalon_streaming"
+   dir="start">
+  <port name="data_rx_data_0" internal="data_rx_data_0" />
+  <port name="data_rx_eop_0" internal="data_rx_eop_0" />
+  <port name="data_rx_error_0" internal="data_rx_error_0" />
+  <port name="data_rx_ready_0" internal="data_rx_ready_0" />
+  <port name="data_rx_sop_0" internal="data_rx_sop_0" />
+  <port name="data_rx_valid_0" internal="data_rx_valid_0" />
+ </interface>
+ <interface
+   name="receive_1"
+   internal="eth_tse_0.receive_1"
+   type="avalon_streaming"
+   dir="start">
+  <port name="data_rx_data_1" internal="data_rx_data_1" />
+  <port name="data_rx_eop_1" internal="data_rx_eop_1" />
+  <port name="data_rx_error_1" internal="data_rx_error_1" />
+  <port name="data_rx_ready_1" internal="data_rx_ready_1" />
+  <port name="data_rx_sop_1" internal="data_rx_sop_1" />
+  <port name="data_rx_valid_1" internal="data_rx_valid_1" />
+ </interface>
+ <interface
+   name="receive_2"
+   internal="eth_tse_0.receive_2"
+   type="avalon_streaming"
+   dir="start">
+  <port name="data_rx_data_2" internal="data_rx_data_2" />
+  <port name="data_rx_eop_2" internal="data_rx_eop_2" />
+  <port name="data_rx_error_2" internal="data_rx_error_2" />
+  <port name="data_rx_ready_2" internal="data_rx_ready_2" />
+  <port name="data_rx_sop_2" internal="data_rx_sop_2" />
+  <port name="data_rx_valid_2" internal="data_rx_valid_2" />
+ </interface>
+ <interface
+   name="receive_3"
+   internal="eth_tse_0.receive_3"
+   type="avalon_streaming"
+   dir="start">
+  <port name="data_rx_data_3" internal="data_rx_data_3" />
+  <port name="data_rx_eop_3" internal="data_rx_eop_3" />
+  <port name="data_rx_error_3" internal="data_rx_error_3" />
+  <port name="data_rx_ready_3" internal="data_rx_ready_3" />
+  <port name="data_rx_sop_3" internal="data_rx_sop_3" />
+  <port name="data_rx_valid_3" internal="data_rx_valid_3" />
+ </interface>
+ <interface
+   name="receive_clock_connection"
+   internal="eth_tse_0.receive_clock_connection" />
+ <interface
+   name="receive_fifo_status"
+   internal="eth_tse_0.receive_fifo_status"
+   type="avalon_streaming"
+   dir="end">
+  <port name="rx_afull_data" internal="rx_afull_data" />
+  <port name="rx_afull_valid" internal="rx_afull_valid" />
+  <port name="rx_afull_channel" internal="rx_afull_channel" />
+ </interface>
+ <interface
+   name="receive_fifo_status_clock_connection"
+   internal="eth_tse_0.receive_fifo_status_clock_connection"
+   type="clock"
+   dir="end">
+  <port name="rx_afull_clk" internal="rx_afull_clk" />
+ </interface>
+ <interface
+   name="receive_packet_type_0"
+   internal="eth_tse_0.receive_packet_type_0"
+   type="avalon_streaming"
+   dir="start">
+  <port name="pkt_class_data_0" internal="pkt_class_data_0" />
+  <port name="pkt_class_valid_0" internal="pkt_class_valid_0" />
+ </interface>
+ <interface
+   name="receive_packet_type_1"
+   internal="eth_tse_0.receive_packet_type_1"
+   type="avalon_streaming"
+   dir="start">
+  <port name="pkt_class_data_1" internal="pkt_class_data_1" />
+  <port name="pkt_class_valid_1" internal="pkt_class_valid_1" />
+ </interface>
+ <interface
+   name="receive_packet_type_2"
+   internal="eth_tse_0.receive_packet_type_2"
+   type="avalon_streaming"
+   dir="start">
+  <port name="pkt_class_data_2" internal="pkt_class_data_2" />
+  <port name="pkt_class_valid_2" internal="pkt_class_valid_2" />
+ </interface>
+ <interface
+   name="receive_packet_type_3"
+   internal="eth_tse_0.receive_packet_type_3"
+   type="avalon_streaming"
+   dir="start">
+  <port name="pkt_class_data_3" internal="pkt_class_data_3" />
+  <port name="pkt_class_valid_3" internal="pkt_class_valid_3" />
+ </interface>
+ <interface
+   name="reset_connection"
+   internal="eth_tse_0.reset_connection"
+   type="reset"
+   dir="end">
+  <port name="reset" internal="reset" />
+ </interface>
+ <interface
+   name="serdes_control_connection"
+   internal="eth_tse_0.serdes_control_connection" />
+ <interface
+   name="serdes_control_connection_0"
+   internal="eth_tse_0.serdes_control_connection_0"
+   type="conduit"
+   dir="end">
+  <port name="rx_recovclkout_0" internal="rx_recovclkout_0" />
+ </interface>
+ <interface
+   name="serdes_control_connection_1"
+   internal="eth_tse_0.serdes_control_connection_1"
+   type="conduit"
+   dir="end">
+  <port name="rx_recovclkout_1" internal="rx_recovclkout_1" />
+ </interface>
+ <interface
+   name="serdes_control_connection_2"
+   internal="eth_tse_0.serdes_control_connection_2"
+   type="conduit"
+   dir="end">
+  <port name="rx_recovclkout_2" internal="rx_recovclkout_2" />
+ </interface>
+ <interface
+   name="serdes_control_connection_3"
+   internal="eth_tse_0.serdes_control_connection_3"
+   type="conduit"
+   dir="end">
+  <port name="rx_recovclkout_3" internal="rx_recovclkout_3" />
+ </interface>
+ <interface
+   name="serial_connection_0"
+   internal="eth_tse_0.serial_connection_0"
+   type="conduit"
+   dir="end">
+  <port name="rxp_0" internal="rxp_0" />
+  <port name="txp_0" internal="txp_0" />
+ </interface>
+ <interface
+   name="serial_connection_1"
+   internal="eth_tse_0.serial_connection_1"
+   type="conduit"
+   dir="end">
+  <port name="rxp_1" internal="rxp_1" />
+  <port name="txp_1" internal="txp_1" />
+ </interface>
+ <interface
+   name="serial_connection_2"
+   internal="eth_tse_0.serial_connection_2"
+   type="conduit"
+   dir="end">
+  <port name="rxp_2" internal="rxp_2" />
+  <port name="txp_2" internal="txp_2" />
+ </interface>
+ <interface
+   name="serial_connection_3"
+   internal="eth_tse_0.serial_connection_3"
+   type="conduit"
+   dir="end">
+  <port name="rxp_3" internal="rxp_3" />
+  <port name="txp_3" internal="txp_3" />
+ </interface>
+ <interface
+   name="status_led_connection"
+   internal="eth_tse_0.status_led_connection" />
+ <interface
+   name="status_led_connection_0"
+   internal="eth_tse_0.status_led_connection_0"
+   type="conduit"
+   dir="end">
+  <port name="led_crs_0" internal="led_crs_0" />
+  <port name="led_link_0" internal="led_link_0" />
+  <port name="led_panel_link_0" internal="led_panel_link_0" />
+  <port name="led_col_0" internal="led_col_0" />
+  <port name="led_an_0" internal="led_an_0" />
+  <port name="led_char_err_0" internal="led_char_err_0" />
+  <port name="led_disp_err_0" internal="led_disp_err_0" />
+ </interface>
+ <interface
+   name="status_led_connection_1"
+   internal="eth_tse_0.status_led_connection_1"
+   type="conduit"
+   dir="end">
+  <port name="led_crs_1" internal="led_crs_1" />
+  <port name="led_link_1" internal="led_link_1" />
+  <port name="led_panel_link_1" internal="led_panel_link_1" />
+  <port name="led_col_1" internal="led_col_1" />
+  <port name="led_an_1" internal="led_an_1" />
+  <port name="led_char_err_1" internal="led_char_err_1" />
+  <port name="led_disp_err_1" internal="led_disp_err_1" />
+ </interface>
+ <interface
+   name="status_led_connection_2"
+   internal="eth_tse_0.status_led_connection_2"
+   type="conduit"
+   dir="end">
+  <port name="led_crs_2" internal="led_crs_2" />
+  <port name="led_link_2" internal="led_link_2" />
+  <port name="led_panel_link_2" internal="led_panel_link_2" />
+  <port name="led_col_2" internal="led_col_2" />
+  <port name="led_an_2" internal="led_an_2" />
+  <port name="led_char_err_2" internal="led_char_err_2" />
+  <port name="led_disp_err_2" internal="led_disp_err_2" />
+ </interface>
+ <interface
+   name="status_led_connection_3"
+   internal="eth_tse_0.status_led_connection_3"
+   type="conduit"
+   dir="end">
+  <port name="led_crs_3" internal="led_crs_3" />
+  <port name="led_link_3" internal="led_link_3" />
+  <port name="led_panel_link_3" internal="led_panel_link_3" />
+  <port name="led_col_3" internal="led_col_3" />
+  <port name="led_an_3" internal="led_an_3" />
+  <port name="led_char_err_3" internal="led_char_err_3" />
+  <port name="led_disp_err_3" internal="led_disp_err_3" />
+ </interface>
+ <interface name="tbi_connection" internal="eth_tse_0.tbi_connection" />
+ <interface name="tbi_connection_0" internal="eth_tse_0.tbi_connection_0" />
+ <interface name="tbi_connection_1" internal="eth_tse_0.tbi_connection_1" />
+ <interface name="tbi_connection_2" internal="eth_tse_0.tbi_connection_2" />
+ <interface name="tbi_connection_3" internal="eth_tse_0.tbi_connection_3" />
+ <interface name="transmit" internal="eth_tse_0.transmit" />
+ <interface
+   name="transmit_0"
+   internal="eth_tse_0.transmit_0"
+   type="avalon_streaming"
+   dir="end">
+  <port name="data_tx_data_0" internal="data_tx_data_0" />
+  <port name="data_tx_eop_0" internal="data_tx_eop_0" />
+  <port name="data_tx_error_0" internal="data_tx_error_0" />
+  <port name="data_tx_ready_0" internal="data_tx_ready_0" />
+  <port name="data_tx_sop_0" internal="data_tx_sop_0" />
+  <port name="data_tx_valid_0" internal="data_tx_valid_0" />
+ </interface>
+ <interface
+   name="transmit_1"
+   internal="eth_tse_0.transmit_1"
+   type="avalon_streaming"
+   dir="end">
+  <port name="data_tx_data_1" internal="data_tx_data_1" />
+  <port name="data_tx_eop_1" internal="data_tx_eop_1" />
+  <port name="data_tx_error_1" internal="data_tx_error_1" />
+  <port name="data_tx_ready_1" internal="data_tx_ready_1" />
+  <port name="data_tx_sop_1" internal="data_tx_sop_1" />
+  <port name="data_tx_valid_1" internal="data_tx_valid_1" />
+ </interface>
+ <interface
+   name="transmit_2"
+   internal="eth_tse_0.transmit_2"
+   type="avalon_streaming"
+   dir="end">
+  <port name="data_tx_data_2" internal="data_tx_data_2" />
+  <port name="data_tx_eop_2" internal="data_tx_eop_2" />
+  <port name="data_tx_error_2" internal="data_tx_error_2" />
+  <port name="data_tx_ready_2" internal="data_tx_ready_2" />
+  <port name="data_tx_sop_2" internal="data_tx_sop_2" />
+  <port name="data_tx_valid_2" internal="data_tx_valid_2" />
+ </interface>
+ <interface
+   name="transmit_3"
+   internal="eth_tse_0.transmit_3"
+   type="avalon_streaming"
+   dir="end">
+  <port name="data_tx_data_3" internal="data_tx_data_3" />
+  <port name="data_tx_eop_3" internal="data_tx_eop_3" />
+  <port name="data_tx_error_3" internal="data_tx_error_3" />
+  <port name="data_tx_ready_3" internal="data_tx_ready_3" />
+  <port name="data_tx_sop_3" internal="data_tx_sop_3" />
+  <port name="data_tx_valid_3" internal="data_tx_valid_3" />
+ </interface>
+ <interface
+   name="transmit_clock_connection"
+   internal="eth_tse_0.transmit_clock_connection" />
+ <module
+   name="eth_tse_0"
+   kind="altera_eth_tse"
+   version="19.1"
+   enabled="1"
+   autoexport="1">
+  <parameter name="AUTO_DEVICE" value="10AX048H2F34I2SG" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="XCVR_RCFG_JTAG_ENABLE" value="0" />
+  <parameter name="XCVR_SET_CAPABILITY_REG_ENABLE" value="0" />
+  <parameter name="XCVR_SET_CSR_SOFT_LOGIC_ENABLE" value="0" />
+  <parameter name="XCVR_SET_PRBS_SOFT_LOGIC_ENABLE" value="0" />
+  <parameter name="XCVR_SET_USER_IDENTIFIER" value="0" />
+  <parameter name="core_variation" value="MAC_PCS" />
+  <parameter name="deviceFamilyName" value="Arria 10" />
+  <parameter name="eg_addr" value="11" />
+  <parameter name="ena_hash" value="false" />
+  <parameter name="enable_alt_reconfig" value="false" />
+  <parameter name="enable_ecc" value="false" />
+  <parameter name="enable_ena" value="32" />
+  <parameter name="enable_gmii_loopback" value="false" />
+  <parameter name="enable_hd_logic" value="false" />
+  <parameter name="enable_mac_flow_ctrl" value="false" />
+  <parameter name="enable_mac_vlan" value="false" />
+  <parameter name="enable_magic_detect" value="true" />
+  <parameter name="enable_ptp_1step" value="false" />
+  <parameter name="enable_sgmii" value="false" />
+  <parameter name="enable_shift16" value="false" />
+  <parameter name="enable_sup_addr" value="false" />
+  <parameter name="enable_timestamping" value="false" />
+  <parameter name="enable_use_internal_fifo" value="false" />
+  <parameter name="export_pwrdn" value="false" />
+  <parameter name="ext_stat_cnt_ena" value="false" />
+  <parameter name="ifGMII" value="MII_GMII" />
+  <parameter name="ing_addr" value="11" />
+  <parameter name="max_channels" value="4" />
+  <parameter name="mdio_clk_div" value="40" />
+  <parameter name="nf_phyip_rcfg_enable" value="false" />
+  <parameter name="phy_identifier" value="0" />
+  <parameter name="phyip_en_synce_support" value="false" />
+  <parameter name="phyip_pll_base_data_rate" value="1250 Mbps" />
+  <parameter name="phyip_pll_type" value="CMU" />
+  <parameter name="phyip_pma_bonding_mode" value="x1" />
+  <parameter name="starting_channel_number" value="0" />
+  <parameter name="stat_cnt_ena" value="false" />
+  <parameter name="transceiver_type" value="LVDS_IO" />
+  <parameter name="tstamp_fp_width" value="4" />
+  <parameter name="useMDIO" value="false" />
+  <parameter name="use_mac_clken" value="false" />
+  <parameter name="use_misc_ports" value="true" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

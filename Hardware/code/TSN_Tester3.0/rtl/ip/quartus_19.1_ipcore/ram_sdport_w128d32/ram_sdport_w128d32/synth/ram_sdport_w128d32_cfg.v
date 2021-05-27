@@ -1,0 +1,5 @@
+config ram_sdport_w128d32_cfg;
+		design ram_sdport_w128d32;
+		instance ram_sdport_w128d32.ram_2port_0 use ram_sdport_w128d32_ram_2port_191.ram_sdport_w128d32_ram_2port_191_bmltdxy;
+endconfig
+

@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 256 200)
+	(text "fifo_w9d16_respectclock_aclr_showahead" (rect 3 -1 170 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 184 20 196)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "data[8..0]" (rect 0 0 36 12)(font "Arial" (font_size 8)))
+		(text "data[8..0]" (rect 4 61 64 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 64 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "wrreq" (rect 0 0 22 12)(font "Arial" (font_size 8)))
+		(text "wrreq" (rect 4 77 34 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 64 88)(line_width 1))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "rdreq" (rect 0 0 21 12)(font "Arial" (font_size 8)))
+		(text "rdreq" (rect 4 93 34 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 64 104)(line_width 1))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "wrclk" (rect 0 0 20 12)(font "Arial" (font_size 8)))
+		(text "wrclk" (rect 4 109 34 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 64 120)(line_width 1))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "rdclk" (rect 0 0 18 12)(font "Arial" (font_size 8)))
+		(text "rdclk" (rect 4 125 34 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 64 136)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "aclr" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "aclr" (rect 4 141 28 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 64 152)(line_width 1))
+	)
+	(port
+		(pt 256 72)
+		(output)
+		(text "q[8..0]" (rect 0 0 24 12)(font "Arial" (font_size 8)))
+		(text "q[8..0]" (rect 224 61 266 72)(font "Arial" (font_size 8)))
+		(line (pt 256 72)(pt 176 72)(line_width 3))
+	)
+	(port
+		(pt 256 88)
+		(output)
+		(text "rdusedw[3..0]" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "rdusedw[3..0]" (rect 186 77 264 88)(font "Arial" (font_size 8)))
+		(line (pt 256 88)(pt 176 88)(line_width 3))
+	)
+	(port
+		(pt 256 104)
+		(output)
+		(text "wrusedw[3..0]" (rect 0 0 54 12)(font "Arial" (font_size 8)))
+		(text "wrusedw[3..0]" (rect 182 93 260 104)(font "Arial" (font_size 8)))
+		(line (pt 256 104)(pt 176 104)(line_width 3))
+	)
+	(port
+		(pt 256 120)
+		(output)
+		(text "rdfull" (rect 0 0 18 12)(font "Arial" (font_size 8)))
+		(text "rdfull" (rect 229 109 265 120)(font "Arial" (font_size 8)))
+		(line (pt 256 120)(pt 176 120)(line_width 1))
+	)
+	(port
+		(pt 256 136)
+		(output)
+		(text "rdempty" (rect 0 0 34 12)(font "Arial" (font_size 8)))
+		(text "rdempty" (rect 215 125 257 136)(font "Arial" (font_size 8)))
+		(line (pt 256 136)(pt 176 136)(line_width 1))
+	)
+	(port
+		(pt 256 152)
+		(output)
+		(text "wrfull" (rect 0 0 20 12)(font "Arial" (font_size 8)))
+		(text "wrfull" (rect 225 141 261 152)(font "Arial" (font_size 8)))
+		(line (pt 256 152)(pt 176 152)(line_width 1))
+	)
+	(port
+		(pt 256 168)
+		(output)
+		(text "wrempty" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "wrempty" (rect 211 157 253 168)(font "Arial" (font_size 8)))
+		(line (pt 256 168)(pt 176 168)(line_width 1))
+	)
+	(drawing
+		(text "fifo_input" (rect 9 43 78 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "datain" (rect 69 67 174 144)(font "Arial" (color 0 0 0)))
+		(text "wrreq" (rect 69 83 168 176)(font "Arial" (color 0 0 0)))
+		(text "rdreq(ack)" (rect 69 99 198 208)(font "Arial" (color 0 0 0)))
+		(text "wrclk" (rect 69 115 168 240)(font "Arial" (color 0 0 0)))
+		(text "rdclk" (rect 69 131 168 272)(font "Arial" (color 0 0 0)))
+		(text "aclr" (rect 69 147 162 304)(font "Arial" (color 0 0 0)))
+		(text "fifo_output" (rect 177 43 420 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "dataout" (rect 142 67 326 144)(font "Arial" (color 0 0 0)))
+		(text "rdusedw" (rect 138 83 318 176)(font "Arial" (color 0 0 0)))
+		(text "wrusedw" (rect 137 99 316 208)(font "Arial" (color 0 0 0)))
+		(text "rdfull" (rect 151 115 338 240)(font "Arial" (color 0 0 0)))
+		(text "rdempty" (rect 137 131 316 272)(font "Arial" (color 0 0 0)))
+		(text "wrfull" (rect 150 147 336 304)(font "Arial" (color 0 0 0)))
+		(text "wrempty" (rect 136 163 314 336)(font "Arial" (color 0 0 0)))
+		(text " fifo_w9d16_respectclock_aclr_showahead " (rect 73 184 386 378)(font "Arial" ))
+		(line (pt 64 32)(pt 176 32)(line_width 1))
+		(line (pt 176 32)(pt 176 184)(line_width 1))
+		(line (pt 64 184)(pt 176 184)(line_width 1))
+		(line (pt 64 32)(pt 64 184)(line_width 1))
+		(line (pt 65 52)(pt 65 156)(line_width 1))
+		(line (pt 66 52)(pt 66 156)(line_width 1))
+		(line (pt 175 52)(pt 175 172)(line_width 1))
+		(line (pt 174 52)(pt 174 172)(line_width 1))
+		(line (pt 0 0)(pt 256 0)(line_width 1))
+		(line (pt 256 0)(pt 256 200)(line_width 1))
+		(line (pt 0 200)(pt 256 200)(line_width 1))
+		(line (pt 0 0)(pt 0 200)(line_width 1))
+	)
+)

@@ -1,0 +1,134 @@
+	component sgmii_pcs_share is
+		port (
+			reg_data_out      : out std_logic_vector(31 downto 0);                    -- readdata
+			reg_rd            : in  std_logic                     := 'X';             -- read
+			reg_data_in       : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			reg_wr            : in  std_logic                     := 'X';             -- write
+			reg_busy          : out std_logic;                                        -- waitrequest
+			reg_addr          : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- address
+			clk               : in  std_logic                     := 'X';             -- clk
+			magic_wakeup_0    : out std_logic;                                        -- magic_wakeup
+			magic_sleep_n_0   : in  std_logic                     := 'X';             -- magic_sleep_n
+			tx_crc_fwd_0      : in  std_logic                     := 'X';             -- tx_crc_fwd
+			magic_wakeup_1    : out std_logic;                                        -- magic_wakeup
+			magic_sleep_n_1   : in  std_logic                     := 'X';             -- magic_sleep_n
+			tx_crc_fwd_1      : in  std_logic                     := 'X';             -- tx_crc_fwd
+			magic_wakeup_2    : out std_logic;                                        -- magic_wakeup
+			magic_sleep_n_2   : in  std_logic                     := 'X';             -- magic_sleep_n
+			tx_crc_fwd_2      : in  std_logic                     := 'X';             -- tx_crc_fwd
+			magic_wakeup_3    : out std_logic;                                        -- magic_wakeup
+			magic_sleep_n_3   : in  std_logic                     := 'X';             -- magic_sleep_n
+			tx_crc_fwd_3      : in  std_logic                     := 'X';             -- tx_crc_fwd
+			mac_rx_clk_0      : out std_logic;                                        -- clk
+			mac_rx_clk_1      : out std_logic;                                        -- clk
+			mac_rx_clk_2      : out std_logic;                                        -- clk
+			mac_rx_clk_3      : out std_logic;                                        -- clk
+			mac_tx_clk_0      : out std_logic;                                        -- clk
+			mac_tx_clk_1      : out std_logic;                                        -- clk
+			mac_tx_clk_2      : out std_logic;                                        -- clk
+			mac_tx_clk_3      : out std_logic;                                        -- clk
+			ref_clk           : in  std_logic                     := 'X';             -- clk
+			data_rx_data_0    : out std_logic_vector(7 downto 0);                     -- data
+			data_rx_eop_0     : out std_logic;                                        -- endofpacket
+			data_rx_error_0   : out std_logic_vector(4 downto 0);                     -- error
+			data_rx_ready_0   : in  std_logic                     := 'X';             -- ready
+			data_rx_sop_0     : out std_logic;                                        -- startofpacket
+			data_rx_valid_0   : out std_logic;                                        -- valid
+			data_rx_data_1    : out std_logic_vector(7 downto 0);                     -- data
+			data_rx_eop_1     : out std_logic;                                        -- endofpacket
+			data_rx_error_1   : out std_logic_vector(4 downto 0);                     -- error
+			data_rx_ready_1   : in  std_logic                     := 'X';             -- ready
+			data_rx_sop_1     : out std_logic;                                        -- startofpacket
+			data_rx_valid_1   : out std_logic;                                        -- valid
+			data_rx_data_2    : out std_logic_vector(7 downto 0);                     -- data
+			data_rx_eop_2     : out std_logic;                                        -- endofpacket
+			data_rx_error_2   : out std_logic_vector(4 downto 0);                     -- error
+			data_rx_ready_2   : in  std_logic                     := 'X';             -- ready
+			data_rx_sop_2     : out std_logic;                                        -- startofpacket
+			data_rx_valid_2   : out std_logic;                                        -- valid
+			data_rx_data_3    : out std_logic_vector(7 downto 0);                     -- data
+			data_rx_eop_3     : out std_logic;                                        -- endofpacket
+			data_rx_error_3   : out std_logic_vector(4 downto 0);                     -- error
+			data_rx_ready_3   : in  std_logic                     := 'X';             -- ready
+			data_rx_sop_3     : out std_logic;                                        -- startofpacket
+			data_rx_valid_3   : out std_logic;                                        -- valid
+			rx_afull_data     : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- data
+			rx_afull_valid    : in  std_logic                     := 'X';             -- valid
+			rx_afull_channel  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- channel
+			rx_afull_clk      : in  std_logic                     := 'X';             -- clk
+			pkt_class_data_0  : out std_logic_vector(4 downto 0);                     -- data
+			pkt_class_valid_0 : out std_logic;                                        -- valid
+			pkt_class_data_1  : out std_logic_vector(4 downto 0);                     -- data
+			pkt_class_valid_1 : out std_logic;                                        -- valid
+			pkt_class_data_2  : out std_logic_vector(4 downto 0);                     -- data
+			pkt_class_valid_2 : out std_logic;                                        -- valid
+			pkt_class_data_3  : out std_logic_vector(4 downto 0);                     -- data
+			pkt_class_valid_3 : out std_logic;                                        -- valid
+			reset             : in  std_logic                     := 'X';             -- reset
+			rx_recovclkout_0  : out std_logic;                                        -- export
+			rx_recovclkout_1  : out std_logic;                                        -- export
+			rx_recovclkout_2  : out std_logic;                                        -- export
+			rx_recovclkout_3  : out std_logic;                                        -- export
+			rxp_0             : in  std_logic                     := 'X';             -- rxp_0
+			txp_0             : out std_logic;                                        -- txp_0
+			rxp_1             : in  std_logic                     := 'X';             -- rxp_1
+			txp_1             : out std_logic;                                        -- txp_1
+			rxp_2             : in  std_logic                     := 'X';             -- rxp_2
+			txp_2             : out std_logic;                                        -- txp_2
+			rxp_3             : in  std_logic                     := 'X';             -- rxp_3
+			txp_3             : out std_logic;                                        -- txp_3
+			led_crs_0         : out std_logic;                                        -- crs
+			led_link_0        : out std_logic;                                        -- link
+			led_panel_link_0  : out std_logic;                                        -- panel_link
+			led_col_0         : out std_logic;                                        -- col
+			led_an_0          : out std_logic;                                        -- an
+			led_char_err_0    : out std_logic;                                        -- char_err
+			led_disp_err_0    : out std_logic;                                        -- disp_err
+			led_crs_1         : out std_logic;                                        -- crs
+			led_link_1        : out std_logic;                                        -- link
+			led_panel_link_1  : out std_logic;                                        -- panel_link
+			led_col_1         : out std_logic;                                        -- col
+			led_an_1          : out std_logic;                                        -- an
+			led_char_err_1    : out std_logic;                                        -- char_err
+			led_disp_err_1    : out std_logic;                                        -- disp_err
+			led_crs_2         : out std_logic;                                        -- crs
+			led_link_2        : out std_logic;                                        -- link
+			led_panel_link_2  : out std_logic;                                        -- panel_link
+			led_col_2         : out std_logic;                                        -- col
+			led_an_2          : out std_logic;                                        -- an
+			led_char_err_2    : out std_logic;                                        -- char_err
+			led_disp_err_2    : out std_logic;                                        -- disp_err
+			led_crs_3         : out std_logic;                                        -- crs
+			led_link_3        : out std_logic;                                        -- link
+			led_panel_link_3  : out std_logic;                                        -- panel_link
+			led_col_3         : out std_logic;                                        -- col
+			led_an_3          : out std_logic;                                        -- an
+			led_char_err_3    : out std_logic;                                        -- char_err
+			led_disp_err_3    : out std_logic;                                        -- disp_err
+			data_tx_data_0    : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			data_tx_eop_0     : in  std_logic                     := 'X';             -- endofpacket
+			data_tx_error_0   : in  std_logic                     := 'X';             -- error
+			data_tx_ready_0   : out std_logic;                                        -- ready
+			data_tx_sop_0     : in  std_logic                     := 'X';             -- startofpacket
+			data_tx_valid_0   : in  std_logic                     := 'X';             -- valid
+			data_tx_data_1    : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			data_tx_eop_1     : in  std_logic                     := 'X';             -- endofpacket
+			data_tx_error_1   : in  std_logic                     := 'X';             -- error
+			data_tx_ready_1   : out std_logic;                                        -- ready
+			data_tx_sop_1     : in  std_logic                     := 'X';             -- startofpacket
+			data_tx_valid_1   : in  std_logic                     := 'X';             -- valid
+			data_tx_data_2    : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			data_tx_eop_2     : in  std_logic                     := 'X';             -- endofpacket
+			data_tx_error_2   : in  std_logic                     := 'X';             -- error
+			data_tx_ready_2   : out std_logic;                                        -- ready
+			data_tx_sop_2     : in  std_logic                     := 'X';             -- startofpacket
+			data_tx_valid_2   : in  std_logic                     := 'X';             -- valid
+			data_tx_data_3    : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			data_tx_eop_3     : in  std_logic                     := 'X';             -- endofpacket
+			data_tx_error_3   : in  std_logic                     := 'X';             -- error
+			data_tx_ready_3   : out std_logic;                                        -- ready
+			data_tx_sop_3     : in  std_logic                     := 'X';             -- startofpacket
+			data_tx_valid_3   : in  std_logic                     := 'X'              -- valid
+		);
+	end component sgmii_pcs_share;
+

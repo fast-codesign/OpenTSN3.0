@@ -1,0 +1,12 @@
+	component ram_sdport_w128d64 is
+		port (
+			data      : in  std_logic_vector(127 downto 0) := (others => 'X'); -- datain
+			wraddress : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- wraddress
+			rdaddress : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- rdaddress
+			wren      : in  std_logic                      := 'X';             -- wren
+			clock     : in  std_logic                      := 'X';             -- clock
+			rden      : in  std_logic                      := 'X';             -- rden
+			q         : out std_logic_vector(127 downto 0)                     -- dataout
+		);
+	end component ram_sdport_w128d64;
+

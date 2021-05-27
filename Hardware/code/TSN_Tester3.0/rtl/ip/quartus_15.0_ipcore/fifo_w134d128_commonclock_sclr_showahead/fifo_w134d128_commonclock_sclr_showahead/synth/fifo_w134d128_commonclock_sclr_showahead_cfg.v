@@ -1,0 +1,5 @@
+config fifo_w134d128_commonclock_sclr_showahead_cfg;
+		design fifo_w134d128_commonclock_sclr_showahead;
+		instance fifo_w134d128_commonclock_sclr_showahead.fifo_0 use fifo_w134d128_commonclock_sclr_showahead_fifo_150.fifo_w134d128_commonclock_sclr_showahead_fifo_150_5kygyqi;
+endconfig
+

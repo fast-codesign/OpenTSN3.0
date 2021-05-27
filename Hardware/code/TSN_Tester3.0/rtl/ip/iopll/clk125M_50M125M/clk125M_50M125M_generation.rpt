@@ -1,0 +1,39 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\intelFPGA\FPGA_TSN_node\ipcore\clk125M_50M125M.qsys --block-symbol-file --output-directory=C:\intelFPGA\FPGA_TSN_node\ipcore\clk125M_50M125M --family="Arria 10" --part=10AX048H2F34I2SG
+Progress: Loading ipcore/clk125M_50M125M.qsys
+Progress: Reading input file
+Progress: Adding iopll_0 [altera_iopll 19.1]
+Progress: Parameterizing module iopll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: clk125M_50M125M.iopll_0: Able to implement PLL with user settings
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\intelFPGA\FPGA_TSN_node\ipcore\clk125M_50M125M.qsys --synthesis=VERILOG --output-directory=C:\intelFPGA\FPGA_TSN_node\ipcore\clk125M_50M125M --family="Arria 10" --part=10AX048H2F34I2SG
+Progress: Loading ipcore/clk125M_50M125M.qsys
+Progress: Reading input file
+Progress: Adding iopll_0 [altera_iopll 19.1]
+Progress: Parameterizing module iopll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: clk125M_50M125M.iopll_0: Able to implement PLL with user settings
+Info: clk125M_50M125M: "Transforming system: clk125M_50M125M"
+Info: clk125M_50M125M: Running transform generation_view_transform
+Info: clk125M_50M125M: Running transform generation_view_transform took 0.000s
+Info: iopll_0: Running transform generation_view_transform
+Info: iopll_0: Running transform generation_view_transform took 0.000s
+Info: clk125M_50M125M: Running transform merlin_avalon_transform
+Info: clk125M_50M125M: Running transform merlin_avalon_transform took 0.064s
+Info: clk125M_50M125M: "Naming system components in system: clk125M_50M125M"
+Info: clk125M_50M125M: "Processing generation queue"
+Info: clk125M_50M125M: "Generating: clk125M_50M125M"
+Info: clk125M_50M125M: "Generating: clk125M_50M125M_altera_iopll_191_5ozur7q"
+Info: clk125M_50M125M: Done "clk125M_50M125M" with 2 modules, 3 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

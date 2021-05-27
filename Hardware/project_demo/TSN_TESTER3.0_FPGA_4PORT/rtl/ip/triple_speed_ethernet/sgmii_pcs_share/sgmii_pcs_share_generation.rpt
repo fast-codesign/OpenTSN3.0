@@ -1,0 +1,85 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate F:\sgmii_pcs_share\sgmii_pcs_share.qsys --synthesis=VERILOG --output-directory=F:\sgmii_pcs_share\sgmii_pcs_share --family="Arria 10" --part=10AX048H2F34I2SG
+Progress: Loading sgmii_pcs_share/sgmii_pcs_share.qsys
+Progress: Reading input file
+Progress: Adding eth_tse_0 [altera_eth_tse 19.1]
+Progress: Parameterizing module eth_tse_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: sgmii_pcs_share.eth_tse_0: MAC options apply to all MAC instances 
+Info: sgmii_pcs_share.eth_tse_0: MII/GMII is automatically selected in 10/100/1000 Mb Ethernet MAC with 1000BASE-X/SGMII PCS core variations
+Info: sgmii_pcs_share.eth_tse_0: All PCS instances use the same PHY ID
+Info: sgmii_pcs_share.eth_tse_0: RGMII is not supported for Arria 10 devices.
+Warning: sgmii_pcs_share.eth_tse_0: To prevent potential performance issues, please ensure the reference clock to the LVDS uses the dedicated reference clock input within the same I/O bank directly.  Manual reference clock promotion is not recommended
+Info: sgmii_pcs_share: "Transforming system: sgmii_pcs_share"
+Info: sgmii_pcs_share: Running transform generation_view_transform
+Info: sgmii_pcs_share: Running transform generation_view_transform took 0.000s
+Info: eth_tse_0: Running transform generation_view_transform
+Info: eth_tse_0: Running transform generation_view_transform took 0.000s
+Info: reg_clk_module: Running transform generation_view_transform
+Info: reg_clk_module: Running transform generation_view_transform took 0.000s
+Info: reg_rst_module: Running transform generation_view_transform
+Info: reg_rst_module: Running transform generation_view_transform took 0.000s
+Info: avalon_arbiter: Running transform generation_view_transform
+Info: avalon_arbiter: Running transform generation_view_transform took 0.000s
+Info: rx_fifo_status_clk_module: Running transform generation_view_transform
+Info: rx_fifo_status_clk_module: Running transform generation_view_transform took 0.000s
+Info: channel_adapter: Running transform generation_view_transform
+Info: channel_adapter: Running transform generation_view_transform took 0.000s
+Info: i_tse_fifoless_mac_0: Running transform generation_view_transform
+Info: i_tse_fifoless_mac_0: Running transform generation_view_transform took 0.000s
+Info: i_cb_reg_share: Running transform generation_view_transform
+Info: i_cb_reg_share: Running transform generation_view_transform took 0.000s
+Info: i_tse_fifoless_mac_1: Running transform generation_view_transform
+Info: i_tse_fifoless_mac_1: Running transform generation_view_transform took 0.000s
+Info: i_tse_fifoless_mac_2: Running transform generation_view_transform
+Info: i_tse_fifoless_mac_2: Running transform generation_view_transform took 0.000s
+Info: i_tse_fifoless_mac_3: Running transform generation_view_transform
+Info: i_tse_fifoless_mac_3: Running transform generation_view_transform took 0.000s
+Info: ref_clk_module: Running transform generation_view_transform
+Info: ref_clk_module: Running transform generation_view_transform took 0.000s
+Info: i_tse_pcs_0: Running transform generation_view_transform
+Info: i_tse_pcs_0: Running transform generation_view_transform took 0.000s
+Info: i_lvdsio_rx_0: Running transform generation_view_transform
+Info: i_lvdsio_rx_0: Running transform generation_view_transform took 0.000s
+Info: i_lvdsio_tx_0: Running transform generation_view_transform
+Info: i_lvdsio_tx_0: Running transform generation_view_transform took 0.000s
+Info: i_lvdsio_terminator_0: Running transform generation_view_transform
+Info: i_lvdsio_terminator_0: Running transform generation_view_transform took 0.000s
+Info: i_tse_pcs_1: Running transform generation_view_transform
+Info: i_tse_pcs_1: Running transform generation_view_transform took 0.000s
+Info: i_tse_pcs_2: Running transform generation_view_transform
+Info: i_tse_pcs_2: Running transform generation_view_transform took 0.000s
+Info: i_tse_pcs_3: Running transform generation_view_transform
+Info: i_tse_pcs_3: Running transform generation_view_transform took 0.000s
+Info: core: Running transform generation_view_transform
+Info: core: Running transform generation_view_transform took 0.000s
+Info: core: Running transform generation_view_transform
+Info: core: Running transform generation_view_transform took 0.000s
+Info: sgmii_pcs_share: Running transform merlin_avalon_transform
+Info: sgmii_pcs_share: Running transform merlin_avalon_transform took 0.117s
+Info: eth_tse_0: Running transform merlin_avalon_transform
+Info: eth_tse_0: Running transform merlin_avalon_transform took 7.833s
+Info: i_lvdsio_rx_0: Running transform merlin_avalon_transform
+Info: i_lvdsio_rx_0: Running transform merlin_avalon_transform took 0.011s
+Info: i_lvdsio_tx_0: Running transform merlin_avalon_transform
+Info: i_lvdsio_tx_0: Running transform merlin_avalon_transform took 0.010s
+Info: sgmii_pcs_share: "Naming system components in system: sgmii_pcs_share"
+Info: sgmii_pcs_share: "Processing generation queue"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share_altera_eth_tse_191_mnifhha"
+Info: sgmii_pcs_share: "Generating: altera_eth_tse_avalon_arbiter"
+Info: sgmii_pcs_share: "Generating: altera_eth_tse_channel_adapter"
+Info: sgmii_pcs_share: "Generating: altera_eth_tse_fifoless_mac"
+Info: sgmii_pcs_share: "Generating: altera_eth_tse_pcs_pma_nf_lvds"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share_altera_lvds_191_xvdv7pi"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share_altera_lvds_191_id6gcay"
+Info: sgmii_pcs_share: "Generating: altera_eth_tse_nf_lvds_terminator"
+Info: sgmii_pcs_share: "Generating: altera_reset_controller"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share_altera_lvds_core20_191_hbfz3py"
+Info: sgmii_pcs_share: "Generating: sgmii_pcs_share_altera_lvds_core20_191_446yfoq"
+Info: sgmii_pcs_share: Done "sgmii_pcs_share" with 12 modules, 228 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
