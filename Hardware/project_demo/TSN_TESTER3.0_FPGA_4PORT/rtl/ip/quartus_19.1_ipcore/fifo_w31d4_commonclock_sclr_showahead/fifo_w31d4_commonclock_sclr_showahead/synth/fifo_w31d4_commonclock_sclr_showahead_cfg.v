@@ -1,5 +1,0 @@
-config fifo_w31d4_commonclock_sclr_showahead_cfg;
-		design fifo_w31d4_commonclock_sclr_showahead;
-		instance fifo_w31d4_commonclock_sclr_showahead.fifo_0 use fifo_w31d4_commonclock_sclr_showahead_fifo_191.fifo_w31d4_commonclock_sclr_showahead_fifo_191_j2k32py;
-endconfig
-

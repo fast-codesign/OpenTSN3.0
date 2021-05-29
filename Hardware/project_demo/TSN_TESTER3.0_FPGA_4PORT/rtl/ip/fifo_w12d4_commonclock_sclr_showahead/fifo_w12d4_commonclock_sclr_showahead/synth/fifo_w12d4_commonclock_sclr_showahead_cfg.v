@@ -1,5 +1,0 @@
-config fifo_w12d4_commonclock_sclr_showahead_cfg;
-		design fifo_w12d4_commonclock_sclr_showahead;
-		instance fifo_w12d4_commonclock_sclr_showahead.fifo_0 use fifo_w12d4_commonclock_sclr_showahead_fifo_191.fifo_w12d4_commonclock_sclr_showahead_fifo_191_l6hobiy;
-endconfig
-

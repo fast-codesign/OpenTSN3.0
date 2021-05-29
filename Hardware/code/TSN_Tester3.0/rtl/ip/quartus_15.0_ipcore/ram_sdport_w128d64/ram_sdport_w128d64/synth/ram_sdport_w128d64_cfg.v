@@ -1,5 +1,0 @@
-config ram_sdport_w128d64_cfg;
-		design ram_sdport_w128d64;
-		instance ram_sdport_w128d64.ram_2port_0 use ram_sdport_w128d64_ram_2port_150.ram_sdport_w128d64_ram_2port_150_vqx6cza;
-endconfig
-

@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='us-ascii'?>
-<qsys_generation_info>
-<qsys_file path="E:/project/TESTER_3.0/TESTER_3_0_3/rtl/ip/fifo_w31d4_commonclock_sclr_showahead/fifo_w31d4_commonclock_sclr_showahead.qsys" />
-<gen_dir path="E:/project/TESTER_3.0/TESTER_3_0_3/rtl/ip/fifo_w31d4_commonclock_sclr_showahead/fifo_w31d4_commonclock_sclr_showahead/" />
-<user_regen_policy value="Never Regenerate Existing IP" />
-<actual_regen_policy value="Never Regenerate Existing IP" />
-<gen_action value="IP Generation Skipped" />
-<gen_status value="IP Generation Succeeded" />
-</qsys_generation_info>
