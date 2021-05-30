@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_init_cfg>   
+
+<!-- 控制器的IMAC地址默认为0-->
+
+<tsnlight_info>
+	<master_imac>2</master_imac>   <!-- master_imac表示主时钟的imac地址为1-->
+	<sync_period>200</sync_period>    <!-- sync_period表示时间同步的周期为200ms--> 
+	<sync_flowID>4096</sync_flowID>    <!--sync_flowID表示sync组播的flowID为4096-->
+	<report_period>200</report_period>  <!-- report_period表示上报周期为200ms-->
+</tsnlight_info>	
+	
+
+<switch> 
+	<register> <!-- 交换机的单个寄存器信息-->
+		<IMAC>2</IMAC>   <!-- 交换机的IMAC地址-->
+		<port_type>1</port_type>    <!-- 端口类型，port_type使用bitmap的形式，8bit，从高到低依次代表7、6、5、4、3、2、1、0号端口。0代表协作模式，仅能接收映射报文，1代表非协作模式，仅能接收未映射报文。示例port_type=252（二进制8b’1111 1100）表示设备的7、6、5、4、3、2号端口为非协作模式，1、0号端口为协作模式--> 
+		<time_slot>16</time_slot>    <!--时间槽的长度为4us-->
+		<inject_slot_period>16</inject_slot_period>  <!-- 注入周期为4-->
+		<submit_slot_period>16</submit_slot_period>  <!-- 提交周期为4-->
+		<qbv_or_qch>0</qbv_or_qch>                    <!-- 调度模型为qbv-->
+		<ST_buf_threshold>300</ST_buf_threshold>   <!-- ST帧的缓冲区块阈值-->
+	</register> 
+
+	<forward_table>  <!-- 交换机的初始转发表-->         
+		<entry> 
+			<flowid>0</flowid> 
+			<outport>4</outport>  
+		</entry> 
+		<!-- flowid=0表示控制器的IMAC地址，在1号节点中，发送到控制器的报文应该从1号端口转发，因此outport=2（二进制为9b’0 0000 0010），outport使用bitmap形式，共9bit，从高到低依次代表主机口、7、6、5、4、3、2、1、0号端口。每位的值为1表示向该端口转发，0表示不向该端口转发，如果多个位为1，则向多个端口转发。-->
+		<entry> 
+			<flowid>1</flowid> 
+			<outport>8</outport>  
+		</entry> 	
+		<!-- flowid=1表示1号节点的IMAC地址，在1号节点中，发送到1号节点的报文应该从主机端口转发，因此outport=256（二进制为9b’1 0000 0000）。-->
+		<entry> 
+			<flowid>2</flowid> 
+			<outport>256</outport>  
+		</entry> 	
+		<!-- flowid=2表示2号节点的IMAC地址，在1号节点中，发送到2号节点的报文应该从0号端口转发，因此outport=1（二进制为9b’0 0000 0001）。-->
+		<entry> 
+			<flowid>3</flowid> 
+			<outport>2</outport>  
+		</entry> 	
+		<entry> 
+			<flowid>100</flowid> 
+			<outport>2</outport>  
+		</entry> 	
+		<entry> 
+			<flowid>4096</flowid> 
+			<outport>2</outport>  
+		</entry> 	
+		<!-- flowid=4096表示sync时间同步报文的flowID，在1号节点中，由于1号为主时钟，需要发送到从时钟2号节点，则报文应该从0号端口转发，因此outport=1（二进制为9b’0 0000 0001）。-->
+	</forward_table>
+</switch>
+
+<switch> 
+	<register> <!-- 交换机的属性信息-->
+		<IMAC>3</IMAC>   <!-- 交换机的IMAC地址-->
+		<port_type>1</port_type>    <!-- 示例port_type=253（二进制8b’1111 1101）表示设备的7、6、5、4、3、2、0号端口为非协作模式，1号端口为协作模式--> 
+		<time_slot>16</time_slot>    <!--时间槽的长度为4us-->
+		<inject_slot_period>16</inject_slot_period>  <!-- 注入周期为4-->
+		<submit_slot_period>16</submit_slot_period>  <!-- 提交周期为4-->
+		<qbv_or_qch>0</qbv_or_qch>                    <!-- 调度模型为qbv-->
+		<ST_buf_threshold>300</ST_buf_threshold>   <!-- ST帧的缓冲区块阈值-->
+	</register> <!-- 交换机的属性信息-->
+	<forward_table>  <!-- 交换机的初始转发表-->         
+		<entry> 
+			<flowid>0</flowid> 
+			<outport>2</outport>  
+		</entry> 
+		<entry> 
+			<flowid>1</flowid> 
+			<outport>2</outport>  
+		</entry> 	
+		<entry> 
+			<flowid>2</flowid> 
+			<outport>2</outport>  
+		</entry> 	
+		<entry> 
+			<flowid>3</flowid> 
+			<outport>256</outport>  
+		</entry> 
+		<entry> 
+			<flowid>100</flowid> 
+			<outport>4</outport>  
+		</entry> 				
+		<entry> 
+			<flowid>4096</flowid> 
+			<outport>260</outport>  
+		</entry> 	
+	</forward_table>
+</switch>
+
+
+<switch> 
+	<register> <!-- 交换机的属性信息-->
+		<IMAC>100</IMAC>   <!-- 交换机的IMAC地址-->
+		<port_type>1</port_type>    <!-- 示例port_type=253（二进制8b’1111 1101）表示设备的7、6、5、4、3、2、0号端口为非协作模式，1号端口为协作模式--> 
+		<time_slot>16</time_slot>    <!--时间槽的长度为4us-->
+		<inject_slot_period>16</inject_slot_period>  <!-- 注入周期为4-->
+		<submit_slot_period>16</submit_slot_period>  <!-- 提交周期为4-->
+		<qbv_or_qch>0</qbv_or_qch>                    <!-- 调度模型为qbv-->
+		<ST_buf_threshold>300</ST_buf_threshold>   <!-- ST帧的缓冲区块阈值-->
+	</register> <!-- 交换机的属性信息-->
+</switch>
+
+</network_init_cfg>
+
+

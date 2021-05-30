@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_plan_cfg>
+<!--文本中节点的先后顺序必须与配置顺序保持一致，配置顺序需要按照离控制器由近到远依次配置-->
+	<switch>
+	<IMAC>2</IMAC><!--交换机的imac为2-->
+	<forwarding_table>   <!-- 转发表 -->
+		<entry> 
+			<flowid>512</flowid> 
+			<outport>2</outport>  
+		</entry> 
+		<!--类似于init_cfg.xml文本中的转发表，flowid表示规划的BE流，outport=1（二进制9b’0 0000 0001）表示从设备的0号端口转发 -->
+		<entry> 
+			<flowid>513</flowid> 
+			<outport>2</outport>  
+		</entry> 
+		<entry> 
+			<flowid>514</flowid> 
+			<outport>2</outport>  
+		</entry> 		
+		<!-- flowid表示规划的ST流，outport=1（二进制9b’0 0000 0001）表示从设备的0号端口转发 -->
+	</forwarding_table>
+		
+
+	<gate_control_list_table> 
+		<port_id>1</port_id><!-- 1号节点中1号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>255</gate_state>  
+			<!-- gate-state表示门控状态，使用bitmap形式，共8位，从低到高依次代表TS0、TS1、TS2、RC、PTP、BE、NMAC、重组队列。每一位代表一个队列的门控状态，1表示门控打开，0表示关闭。示例gate_state=254（二进制8b’11111110）表示7、6、5、4、3、2、1号队列为打开状态，0号队列为关闭状态。-->	
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>15</time_slot> 
+			<gate_state>254</gate_state>  <!-- 当前时间敏感流量门控关闭 -->
+		</entry>
+			
+	</gate_control_list_table>
+	
+</switch>
+
+
+
+
+<switch>
+	<IMAC>3</IMAC><!--交换机的imac为3 -->
+	<forwarding_table>   <!-- 转发表 -->
+		<entry> 
+			<flowid>512</flowid> 
+			<outport>1</outport>  
+		</entry> 
+		<entry> 
+			<flowid>513</flowid> 
+			<outport>1</outport>  
+		</entry> 
+			<entry> 
+			<flowid>514</flowid> 
+			<outport>1</outport>  
+		</entry> 	
+	</forwarding_table>
+	
+	<gate_control_list_table> <!-- 2号节点中0号端口门控表 -->
+		<port_id>0</port_id><!-- 1号节点中0号端口门控表 -->
+		<entry>
+			<time_slot>0</time_slot> 
+			<gate_state>254</gate_state>  
+			<!-- 当前时刻，时间敏感流量队列门控关闭，其他门控打开。-->	
+		</entry>
+		<entry>
+			<time_slot>1</time_slot> 
+			<gate_state>254</gate_state>  <!-- 当前时刻，时间敏感流量队列门控关闭，其他门控打开。-->
+		</entry>
+		<entry>
+			<time_slot>2</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>
+		<entry>
+			<time_slot>3</time_slot> 
+			<gate_state>255</gate_state>  
+		</entry>		
+	</gate_control_list_table>
+	
+</switch>
+
+
+
+<switch>
+	<IMAC>4</IMAC><!--交换机的imac为3 -->
+	
+	<TX_FL-tag_mapping_table> <!-- 2号节点的映射表-->
+		<entry>
+			<map_id>0</map_id><!-- src_port -->
+			<src_ip>192.168.1.11</src_ip>			
+			<dst_ip>192.168.1.12</dst_ip>         
+			<src_port>1111</src_port>           
+			<dst_port>2222</dst_port>	        
+			<protocol_type>11</protocol_type>   
+			<flow_type>0</flow_type>      
+			<flow_id>513</flow_id>			
+			<inject_addr>1</inject_addr>      
+			<submit_addr>1</submit_addr>    
+		</entry>	
+	</TX_FL-tag_mapping_table>	
+	<RX_FL-tag_remapping_table>  <!-- 2号节点逆映射表 -->
+		<entry> 
+			<remap_id>0</remap_id>
+			<flow_id>512</flow_id> 
+			<dmac>11:22:33:44:55:66</dmac>	
+			<outport>1</outport>  
+		</entry>			
+	</RX_FL-tag_remapping_table>		
+</switch>
+
+
+
+<switch>
+	<IMAC>5</IMAC><!--交换机的imac为3 -->
+
+	<TX_FL-tag_mapping_table> <!-- 2号节点的映射表-->
+		<entry>
+			<map_id>0</map_id><!-- src_port -->
+			<src_ip>192.168.1.11</src_ip>			
+			<dst_ip>192.168.1.12</dst_ip>         
+			<src_port>1111</src_port>           
+			<dst_port>2222</dst_port>	        
+			<protocol_type>11</protocol_type>   
+			<flow_type>0</flow_type>      
+			<flow_id>513</flow_id>			
+			<inject_addr>1</inject_addr>      
+			<submit_addr>1</submit_addr>    
+		</entry>	
+	</TX_FL-tag_mapping_table>	
+	<RX_FL-tag_remapping_table>  <!-- 2号节点逆映射表 -->
+		<entry> 
+			<remap_id>0</remap_id>
+			<flow_id>513</flow_id> 
+			<dmac>11:22:33:44:55:66</dmac>	
+			<outport>1</outport>  
+		</entry>			
+	</RX_FL-tag_remapping_table>		
+</switch>
+
+
+</network_plan_cfg>
