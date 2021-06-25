@@ -1,6 +1,6 @@
 TSN交换机示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1，使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码中总共使用到12个ip核文件，IP核详细配置参数如下：
 （1）IP核：altera_iopll 
-	ipcore_name:clk125M_50M125M
+    ipcore_name:clk125M_50M125M
     Device Family:Arria 10
     Component:10AX048H2F34E2SG
     Speed Grade:2
@@ -25,7 +25,7 @@ TSN交换机示例工程使用的quartus版本为Quartus Prime Standard Edition 
     Ip_core_name: sgmii_pcs_share
     Component:10AX048H2F34E2SG
     Core variation : 10/100/1000Mb Ethernet MAC with 1000BASE-X/sgmii pcs
-    Use internal fifo：deseclect
+    Use internal fifo：deseclect （不勾选Use internal fifo）
     Number of ports : 4
     Transceiver type : LVDS I/O
     PHY ID : 0x00000000
