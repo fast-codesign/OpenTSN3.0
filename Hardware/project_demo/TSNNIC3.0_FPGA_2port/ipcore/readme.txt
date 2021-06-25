@@ -1,16 +1,16 @@
 ﻿TSN网卡示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1,使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码中总共使用到14个ip核文件，IP核详细配置参数如下：
 （1）IP核：altera_iopll 
-     ipcore_name:clk125M_50M125M
-     Reference Clock Frequency: 125.0 MHz
-     Number Of Clocks : 2
-     Clock Name of outclk0 : 50MHz
+    ipcore_name:clk125M_50M125M
+    Reference Clock Frequency: 125.0 MHz
+    Number Of Clocks : 2
+    Clock Name of outclk0 : 50MHz
     Clock Name of outclk1 : 125MHz
 
 （2）IP核: altera_eth_tse （生成三速以太网IP核后，需替换两个文件，详见./sgmii_pcs_revise_note）
     ipcore_name:sgmii_pcs_share
     Core variation : 10/100/1000Mb Ethernet MAC with 1000BASE-X/sgmii pcs
     Component:10AX048H2F34E2SG
-    Use internal fifo：deseclect
+    Use internal fifo：deseclect（不勾选Use internal fifo）
     Number of ports : 4
     Transceiver type : LVDS I/O
     PHY ID : 0x00000000
