@@ -1,8 +1,8 @@
-TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄFPGAĞÍºÅÎªIntel Arria10:10AX048H2F34E2SG£¬Ó²¼şÂß¼­Ô´ÂëÖĞ×Ü¹²Ê¹ÓÃµ½12¸öipºËÎÄ¼ş£¬IPºËÏêÏ¸ÅäÖÃ²ÎÊıÈçÏÂ£º
-£¨1£©IPºË£ºaltera_iopll 
+TSNäº¤æ¢æœºç¤ºä¾‹å·¥ç¨‹ä½¿ç”¨çš„quartusç‰ˆæœ¬ä¸ºQuartus Prime Standard Edition 19.1ï¼Œä½¿ç”¨çš„FPGAå‹å·ä¸ºIntel Arria10:10AX048H2F34E2SGï¼Œç¡¬ä»¶é€»è¾‘æºç ä¸­æ€»å…±ä½¿ç”¨åˆ°12ä¸ªipæ ¸æ–‡ä»¶ï¼ŒIPæ ¸è¯¦ç»†é…ç½®å‚æ•°å¦‚ä¸‹ï¼š
+ï¼ˆ1ï¼‰IPæ ¸ï¼šaltera_iopll 
 	ipcore_name:clk125M_50M125M
     Device Family:Arria 10
-    Component:10AX048H2F34I2SG
+    Component:10AX048H2F34E2SG
     Speed Grade:2
     Reference Clock Frequency : 125.0 MHz
     Enable locked output port : selected
@@ -21,16 +21,17 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     PLL Bandwidth Preset : Low
     Others:default
 
-£¨2£©IPºË: altera_eth_tse £¨Éú³ÉÈıËÙÒÔÌ«ÍøIPºËºó£¬ĞèÌæ»»Á½¸öÎÄ¼ş£¬Ïê¼û./sgmii_pcs_revise_note£©
+ï¼ˆ2ï¼‰IPæ ¸: altera_eth_tse ï¼ˆç”Ÿæˆä¸‰é€Ÿä»¥å¤ªç½‘IPæ ¸åï¼Œéœ€æ›¿æ¢ä¸¤ä¸ªæ–‡ä»¶ï¼Œè¯¦è§./sgmii_pcs_revise_noteï¼‰
     Ip_core_name: sgmii_pcs_share
-    Component:10AX048H2F34I2SG
+    Component:10AX048H2F34E2SG
     Core variation : 10/100/1000Mb Ethernet MAC with 1000BASE-X/sgmii pcs
+    Use internal fifoï¼šdeseclect
     Number of ports : 4
     Transceiver type : LVDS I/O
     PHY ID : 0x00000000
     Others:default
 
-£¨3£©IPºË:2-port RAM
+ï¼ˆ3ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: asdprf16x8_rq
     Operation Mode:With one read port and one write port
     Ram_width:8
@@ -40,7 +41,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Read input aclrs:selected
     Others:default
 
-£¨4£©IPºË:2-port RAM
+ï¼ˆ4ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: asdprf16x9_rq
     Operation Mode:With one read port and one write port
     Ram_width:9
@@ -50,7 +51,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Read input aclrs:selected
     Others:default
 
-£¨5£©IPºË:2-port RAM
+ï¼ˆ5ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: sdprf512x9_s
     Operation Mode:With one read port and one write port
     Ram_width:9
@@ -60,7 +61,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Read input aclrs:selected
     Others:default
 
-£¨6£©IPºË:2-port RAM
+ï¼ˆ6ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: suhddpsram1024x8_rq
     Operation Mode:With two read/write ports
     Ram_width:8
@@ -70,7 +71,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default
 
-£¨7£©IPºË:2-port RAM
+ï¼ˆ7ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: suhddpsram16384x9_s
     Operation Mode:With two read/write ports
     Ram_width:9
@@ -80,7 +81,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default
 
-£¨8£©IPºË:2-port RAM
+ï¼ˆ8ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: suhddpsram65536x134_s
     Operation Mode:With two read/write ports
     Ram_width:134
@@ -90,7 +91,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default
 
-£¨9£©IPºË:2-port RAM
+ï¼ˆ9ï¼‰IPæ ¸:2-port RAM
     Ip_core_name: suhddpsram512x4_rq
     Operation Mode:With two read/write ports
     Ram_width:4
@@ -100,7 +101,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Output aclrs:"q_a port" and "q_b port" are both selected
     Others:default
 
-£¨10£©IPºË: FIFO
+ï¼ˆ10ï¼‰IPæ ¸: FIFO
     Ip_core_name: DCFIFO_10bit_64
     Fifo_width:10
     Fifo_depth:64
@@ -109,7 +110,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Read access:Normal synchronous FIFO mode
     Others:default
 
-£¨11£©IPºË: FIFO
+ï¼ˆ11ï¼‰IPæ ¸: FIFO
     Ip_core_name: dcm_fifo9x256
     Fifo_width:9
     Fifo_depth:256
@@ -118,7 +119,7 @@ TSN½»»»»úÊ¾Àı¹¤³ÌÊ¹ÓÃµÄquartus°æ±¾ÎªQuartus Prime Standard Edition 19.1£¬Ê¹ÓÃµÄF
     Reset:Asynchronous clear
     Others:default
 
-£¨12£©IPºË: FIFO
+ï¼ˆ12ï¼‰IPæ ¸: FIFO
     Ip_core_name: fifo_35x4
     Fifo_width:35
     Fifo_depth:4
