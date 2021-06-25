@@ -12,7 +12,7 @@
 1）用sgmii_eth_substitute.v文件替换掉路径下的sgmii_pcs_share_altera_eth_tse _191_3sjnh4y.v文件；
 2）将替换的文件名称修改sgmii_pcs_share_altera_eth_tse_191_3sjnh4y.v，
 3）打开名称修改后的sgmii_pcs_share_altera_eth_tse_191_3sjnh4y.v文本，将第10行修改为“module sgmii_pcs_share_altera_eth_tse_191_3sjnh4y (”；
-4）确认文本第437行实例化指向路径\...\sgmii_pcs_share\altera_lvds_191\synth的sgmii_pcs_share_altera_lvds_191_xvdv7pi.v文件，如指向错误，请修改；
-5）确认文本第449行实例化指向路径\...\sgmii_pcs_share\altera_lvds_191\synth的sgmii_pcs_share_altera_lvds_191_id6gcay.v文件，如指向错误，请修改；
+4）确认文本第437行实例化指向路径\...\sgmii_pcs_share\altera_lvds_191\synth的sgmii_pcs_share_altera_lvds_191_ecdu3ty.v文件，如指向错误，请修改；
+5）确认文本第449行实例化指向路径\...\sgmii_pcs_share\altera_lvds_191\synth的sgmii_pcs_share_altera_lvds_191_asrzfni.v文件，如指向错误，请修改；
 
 修改完成后进行保存就完成了。
