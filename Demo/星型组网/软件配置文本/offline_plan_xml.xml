@@ -80,18 +80,16 @@
 
 <entry flowid="8" outport="8"/>    <!-- 摄像头流量转发 -->
 <entry flowid="9" outport="16"/>   <!-- 摄像头流量转发 -->
-<entry flowid="10" outport="256"/>
 
 <entry flowid="11" outport="1"/>   <!-- 混合流量转发 -->
 <entry flowid="12" outport="1"/>   <!-- 混合流量转发 -->
 <entry flowid="13" outport="1"/>   <!-- 混合流量转发 -->
 <entry flowid="14" outport="1"/>   <!-- 混合流量转发 -->
 
-<entry flowid="20" outport="256"/>
 <entry flowid="21" outport="32"/>  <!-- vlc流量转发 -->
 <entry flowid="22" outport="64"/>  <!-- vlc流量转发 -->
 
-<entry flowid="4096" outport="505"/>  <!-- 时间同步报文转发 -->
+<entry flowid="4096" outport="249"/>  <!-- 时间同步报文转发 -->
 </forward_table>
 </node>
 
@@ -347,7 +345,7 @@
 </remap_table>
 </node>
 
-<node imac="6">     <!-- TSN网卡1 vlc流量-->
+<node imac="6">     <!-- TSN网卡 vlc流量-->
 <register>
 <time_slot>32</time_slot>    <!-- 单位us -->
 <inject_slot_period>4</inject_slot_period>  
@@ -391,7 +389,7 @@
 </remap_table>		
 </node>
 
-<node imac="7">   <!-- TSN网卡2 vlc流量重映射-->
+<node imac="7">   <!-- TSN网卡 vlc流量重映射-->
 
 <register>
 <time_slot>32</time_slot>    <!-- 单位us -->
