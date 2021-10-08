@@ -112,11 +112,11 @@ int init_cfg_fun(u8 node_idx)
 
 	cfg_data = 2;
 	printf("cfg hcp state %d\n",cfg_data);	
-	build_send_hcp_cfg_pkt(init_cfg[node_idx].imac,HCP_STATE_ADDR,(u32 *)&cfg_data,1);
+	//build_send_hcp_cfg_pkt(init_cfg[node_idx].imac,HCP_STATE_ADDR,(u32 *)&cfg_data,1);
 
 	cfg_data = init_cfg[node_idx].reg_data.port_type;	
 	printf("cfg hcp port_type %d\n",cfg_data);	
-	build_send_hcp_cfg_pkt(init_cfg[node_idx].imac,HCP_PORT_TYPE_ADDR,(u32 *)&cfg_data,1);
+	//build_send_hcp_cfg_pkt(init_cfg[node_idx].imac,HCP_PORT_TYPE_ADDR,(u32 *)&cfg_data,1);
 	//初始配置结束
 
 	printf("1111111111111111111111111111111111111111111111111\n");
@@ -142,7 +142,7 @@ u16 get_imac_from_tsntag(u8 *tsntag)
 }
 
 u8 node_idx = 0;//节点的索引值
-u8 local_cfg_flag = 0;
+u8 local_cfg_flag = 1;
 
 int basic_cfg(u8 *pkt,u16 pkt_len)
 {

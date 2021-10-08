@@ -473,7 +473,7 @@ void ptp_handle(u16 pkt_len,const unsigned char *packet_content)
             if(is_precision_in_shreshold()){                  //�ж�ϵͳͬ�������Ƿ�С����ֵ
             G_STATE = NW_RUNNING_S;                       //��ת����������״̬
             u32 cfg_data = 3;
-            printf("cfg finish %d\n",cfg_data);
+            printf("11cfg finish %d\n",cfg_data);
             build_send_chip_cfg_pkt(1,CHIP_CFG_FINISH_ADDR,1,(u32 *)&cfg_data);//配置端口类型
             for(int i =0;i<101;i++){
                 if(table.table[i].sync_seq!=0){

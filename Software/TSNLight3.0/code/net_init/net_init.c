@@ -96,8 +96,8 @@ void parse_register_xml( xmlNodePtr cur)
 		if(xmlStrcasecmp(entry->name,(const xmlChar *)"ST_buf_threshold")==0)
 		{
 			value=xmlNodeGetContent(entry);
-			init_cfg[cur_node_num].reg_data.rc_regulation_value = atoi(value);
-			init_cfg[cur_node_num].reg_data.be_regulation_value = atoi(value)-100;//BE比RC小100个bufid
+			init_cfg[cur_node_num].reg_data.rc_regulation_value = atoi(value)-100;
+			init_cfg[cur_node_num].reg_data.be_regulation_value = atoi(value);//BE比RC小100个bufid
 			init_cfg[cur_node_num].reg_data.umap_regulation_value = atoi(value);
 			printf("ST_buf_threshold %d\n",init_cfg[cur_node_num].reg_data.umap_regulation_value);
 		}
@@ -344,7 +344,7 @@ int net_init(u8 *network_inetrface)
 
 
 	//初始化时间同步
-	ret = ptp_init(100,SYNC_FLOWID,MASTER_IMAC,DEFAULT_PERCISION);
+	ret = ptp_init(50,SYNC_FLOWID,MASTER_IMAC,DEFAULT_PERCISION);
 	if(ret == -1)
 	{
 		printf("init_ptp fail\n");

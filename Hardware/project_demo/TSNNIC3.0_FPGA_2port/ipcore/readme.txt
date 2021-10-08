@@ -1,4 +1,5 @@
-﻿TSN网卡示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1,使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码中总共使用到14个ip核文件，IP核详细配置参数如下：
+﻿TSN网卡示例工程使用的quartus版本为Quartus Prime Standard Edition 19.1,使用的FPGA型号为Intel Arria10:10AX048H2F34E2SG，硬件逻辑源码（包括核心代码、器件相关代码和接口相关代码）中总共使用到14个ip核文件，用户在搭建TSN网卡示例工程时，可根据下面的IP核配置参数说明信息来生成对应IP核，并将所有IP核的QSYS文件放置在当前路径下。
+IP核配置参数说明信息如下：
 （1）IP核：altera_iopll 
     ipcore_name:clk125M_50M125M
     Device Family:Arria 10

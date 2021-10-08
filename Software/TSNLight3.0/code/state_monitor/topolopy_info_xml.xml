@@ -19,5 +19,12 @@ addr表示远端设备的地址，如果设备类型是控制器和交换机，�
 <link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
 </node>
 
+<node imac="4" sync_type="slave" port_type="0">
+<link local_port="0" remote_port="0" remote_device="switch" addr="4"/>
+<link local_port="1" remote_port="1" remote_device="switch" addr="3"/>
+<link local_port="2" remote_port="0" remote_device="controler" addr="0"/>
+<link local_port="3" remote_port="0" remote_device="endstation" addr="0"/>
+</node>
+
 </nodes>
 

@@ -1,4 +1,5 @@
-module TSNNic_FPGA_2port(
+module TSNNic_FPGA_2port#(parameter tsn_chip_version = 32'h20210629)
+(
     input  wire       FPGA_SYS_CLK,//125Mhz
     input  wire       FPGA_SYS_RST_N,
     //Extenal PHY
@@ -165,6 +166,28 @@ assign PHY_MDC = Smi_mdc;
 assign PHY_MDIO = (Smi_link & (Smi_sel == 2'd0))? Smi_mdo : 1'bz;
 assign Smi_sel = 1'b0;
 
+//******************************
+//  Device identification
+//*****************************
+assign DEBUG_LED[4] = 1'b1;
+assign DEBUG_LED[3] = 1'b0;
+assign DEBUG_LED[2] = 1'b0;
+assign DEBUG_LED[1] = 1'b1;
+assign DEBUG_LED[0] = 1'b0;
+
+//******************************
+// Version identification
+//*****************************
+reg        [31:0]       rv_tsn_chip_version/*synthesis noprune*/;
+always @(posedge clk_125M or negedge rst_n) begin
+    if(!rst_n) begin
+        rv_tsn_chip_version <= 32'h0;
+    end
+    else begin
+        rv_tsn_chip_version <= tsn_chip_version;
+    end
+end
+
 always @(*)
     if(~FPGA_SYS_RST_N)
         Smi_mdi = 1'b0;
@@ -233,7 +256,7 @@ tsnnic_top tsnnic_top_inst(
 	.o_gmii_tx_er_host(o_gmii_tx_er_p3),
 	.o_gmii_tx_clk_host(o_gmii_tx_clk_p3),
     
-    .o_init_led(DEBUG_LED[0]),
+    //.o_init_led(DEBUG_LED[0]),
 
 	.pluse_s(RSV_IO[9])
     /* 

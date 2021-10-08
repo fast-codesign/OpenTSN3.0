@@ -138,7 +138,7 @@ u8 *data_pkt_receive_dispatch_1(u16 *len)
 	}
 	else
 	{
-		printf("get pkt\n");
+		//printf("get pkt\n");
 		if(pkt[0] == 0x60)
 			//cnc_pkt_print(pkt,packet.len);
 		*len = packet.len;		

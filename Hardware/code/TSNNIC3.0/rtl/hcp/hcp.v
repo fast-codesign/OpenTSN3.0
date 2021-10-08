@@ -32,7 +32,23 @@ module hcp
 	    o_gmii_tx_er,
 	    o_gmii_tx_clk,
 
-
+        i_port0_inpkt_pulse,      
+        i_port0_discard_pkt_pulse,
+        i_port1_inpkt_pulse,             
+        i_port1_discard_pkt_pulse,       
+        i_port2_inpkt_pulse,      
+        i_port2_discard_pkt_pulse,
+        i_port3_inpkt_pulse,      
+        i_port3_discard_pkt_pulse,
+        i_port4_inpkt_pulse,     
+        i_port4_discard_pkt_pulse,
+        
+        i_port0_outpkt_pulse,
+        i_port1_outpkt_pulse,
+        i_port2_outpkt_pulse,
+        i_port3_outpkt_pulse,
+        i_port4_outpkt_pulse,
+        
         o_timer_rst_gts2others,
         ov_time_slot,
         o_time_slot_switch,
@@ -43,6 +59,23 @@ module hcp
 // clk & rst
 input               i_clk;
 input               i_rst_n; 
+
+input               i_port0_inpkt_pulse;      
+input               i_port0_discard_pkt_pulse;
+input               i_port1_inpkt_pulse;             
+input               i_port1_discard_pkt_pulse;       
+input               i_port2_inpkt_pulse;      
+input               i_port2_discard_pkt_pulse;
+input               i_port3_inpkt_pulse;      
+input               i_port3_discard_pkt_pulse;
+input               i_port4_inpkt_pulse;     
+input               i_port4_discard_pkt_pulse;
+
+input               i_port0_outpkt_pulse;
+input               i_port1_outpkt_pulse;
+input               i_port2_outpkt_pulse;
+input               i_port3_outpkt_pulse;
+input               i_port4_outpkt_pulse;
 
 output  [203:0]	    ov_wr_command;
 output  	        o_wr_command_wr;
@@ -142,7 +175,7 @@ gmii_adapter_hcp gmii_adapter_hcp_inst(
 .gmii_txclk            (i_gmii_rxclk),
        
 .rst_n                 (w_gmii_rst_n),      
-.port_type             (wv_port_type_csm2others),
+.port_type             (wv_port_type_csm2others[4]),
        
 .gmii_rx_dv            (i_gmii_dv),
 .gmii_rx_er            (i_gmii_er),
@@ -168,7 +201,7 @@ network_rx_hcp network_rx_hcp_inst(
 .reset_n               (i_rst_n),
 .i_gmii_rst_n          (w_gmii_rst_n),
 
-.port_type             (wv_port_type_csm2others),
+.port_type             (wv_port_type_csm2others[4]),
 .cfg_finish            (wv_cfg_finish_csm2others),
             
 .clk_gmii_rx           (i_gmii_rxclk),
@@ -334,8 +367,8 @@ time_slot_calculation time_slot_calculation_inst(
        
 .iv_table_period       (wv_table_period),
        
-.ov_time_slot          ( ),
-.o_time_slot_switch    ( )       
+.ov_time_slot          (ov_time_slot ),
+.o_time_slot_switch    (o_time_slot_switch )       
 );
 
 
@@ -367,24 +400,26 @@ configure_state_manage configure_state_manage_inst(
 .ov_be_regulation_value(),
 .ov_unmap_regulation_value    (),
        
-.i_host_inpkt_pulse           (1'b0),
-.i_host_discard_pkt_pulse     (1'b0),
-.i_port0_inpkt_pulse          (1'b0),
-.i_port0_discard_pkt_pulse    (1'b0),
-.i_port1_inpkt_pulse          (1'b0),
-.i_port1_discard_pkt_pulse    (1'b0),
-.i_port2_inpkt_pulse          (1'b0),
-.i_port2_discard_pkt_pulse    (1'b0),
-.i_port3_inpkt_pulse          (1'b0),
-.i_port3_discard_pkt_pulse    (1'b0),
+.i_host_inpkt_pulse           (i_port4_inpkt_pulse      ),
+.i_host_discard_pkt_pulse     (i_port4_discard_pkt_pulse),
+.i_port0_inpkt_pulse          (i_port0_inpkt_pulse      ),
+.i_port0_discard_pkt_pulse    (i_port0_discard_pkt_pulse),
+.i_port1_inpkt_pulse          (i_port1_inpkt_pulse      ),
+.i_port1_discard_pkt_pulse    (i_port1_discard_pkt_pulse),
+.i_port2_inpkt_pulse          (i_port2_inpkt_pulse      ),
+.i_port2_discard_pkt_pulse    (i_port2_discard_pkt_pulse),
+.i_port3_inpkt_pulse          (i_port3_inpkt_pulse      ),
+.i_port3_discard_pkt_pulse    (i_port3_discard_pkt_pulse),
+                               
+                               
        
-.i_host_outpkt_pulse          (1'b0),
+.i_host_outpkt_pulse          ( i_port4_outpkt_pulse),
 .i_host_in_queue_discard_pulse(1'b0),
-.i_port0_outpkt_pulse         (1'b0),
-.i_port1_outpkt_pulse         (1'b0),
-.i_port2_outpkt_pulse         (1'b0),
-.i_port3_outpkt_pulse         (1'b0),
-
+.i_port0_outpkt_pulse         (i_port0_outpkt_pulse),
+.i_port1_outpkt_pulse         (i_port1_outpkt_pulse),
+.i_port2_outpkt_pulse         (i_port2_outpkt_pulse),
+.i_port3_outpkt_pulse         (i_port3_outpkt_pulse),
+                              
 .ov_nmac_data                 (wv_nmac_data_csm2dcm),
 .o_nmac_data_last             (w_nmac_data_last_csm2dcm),
 .o_namc_report_req            (w_namc_report_req_csm2dcm),

@@ -283,11 +283,11 @@ int build_send_hcp_cfg_pkt(u16 dimac,u32 addr,u32 *data,u16 num)
 	remap_table_info *tmp_remap_table_data = NULL;
 
 	//修改配置类型为TSMP_CHIP_CFG
-	hcp_cfg_pkt = (nmac_pkt *)build_tsmp_pkt(TSMP_HCP_CFG,dimac,128);
-	//hcp_cfg_pkt = (nmac_pkt *)build_tsmp_pkt(TSMP_CHIP_CFG,dimac,128);
+	//hcp_cfg_pkt = (nmac_pkt *)build_tsmp_pkt(TSMP_HCP_CFG,dimac,128);
+	hcp_cfg_pkt = (nmac_pkt *)build_tsmp_pkt(TSMP_CHIP_CFG,dimac,128);
 	if(hcp_cfg_pkt == NULL)
 		return -1;
-#if 0
+#if 1
 //nmac 配置报文赋值
 	hcp_cfg_pkt->dst_tsn_tag.flow_type = 5;//NMAC报文 二进制101
 	hcp_cfg_pkt->dst_tsn_tag.flow_id = dimac;
@@ -310,7 +310,7 @@ int build_send_hcp_cfg_pkt(u16 dimac,u32 addr,u32 *data,u16 num)
 	//配置映射表
 	if(addr == HCP_MAP_BASE_ADDR)
 	{
-		tmp_map_table 	   = (map_table_info *)(hcp_cfg_pkt);//
+		tmp_map_table 	   = (map_table_info *)(hcp_cfg_pkt->data-1);//
 		tmp_map_table_data = (map_table_info *)data;
 		for(num_idx=0;num_idx<num;num_idx++)
 		{
@@ -326,7 +326,7 @@ int build_send_hcp_cfg_pkt(u16 dimac,u32 addr,u32 *data,u16 num)
 	}
 	else if(addr == HCP_REMAP_BASE_ADDR)//配置重映射表
 	{
-		tmp_remap_table 	   = (remap_table_info *)(hcp_cfg_pkt);//
+		tmp_remap_table 	   = (remap_table_info *)(hcp_cfg_pkt->data-1);//
 		tmp_remap_table_data   = (remap_table_info *)data;
 
 		for(num_idx=0;num_idx<num;num_idx++)
@@ -342,9 +342,9 @@ int build_send_hcp_cfg_pkt(u16 dimac,u32 addr,u32 *data,u16 num)
 		//memcpy(hcp_cfg_pkt,data,sizeof(remap_table_info)*num);
 	else//配置单个寄存器，每次只能配置一个单个寄存器
 	{
-		//printf("hcp addr error\n");
-		*(u32 *)hcp_cfg_pkt = ntohl(addr);
-		*((u32 *)hcp_cfg_pkt + 1) = ntohl(*data);
+		printf("hcp addr error\n");
+		//*(u32 *)hcp_cfg_pkt = ntohl(addr);
+		//*((u32 *)hcp_cfg_pkt + 1) = ntohl(*data);
 	}
 
 	data_pkt_send_handle((u8 *)hcp_cfg_pkt,128);
@@ -644,7 +644,7 @@ int cfg_hcp_map_table(u16 imac,map_table_info *map_table)
 */
 int cfg_hcp_remap_table(u16 imac,remap_table_info *remap_table)
 {
-
+	printf("cfg_remap table\n");
 	u16 get_report_type = 0;
 	u16 len = 0;
 	u8 *pkt = NULL;

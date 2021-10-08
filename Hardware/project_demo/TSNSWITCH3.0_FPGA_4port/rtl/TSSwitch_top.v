@@ -1,9 +1,9 @@
 // Copyright (C) 1953-2020 NUDT
 // Verilog module name - TSSwitch_top 
-// Version: TSSwitch_top_V1.0
+// Version: 20210629
 // Created:
 //         by - fenglin 
-//         at - 10.2020
+//         at - 6.29.2021
 ////////////////////////////////////////////////////////////////////////////
 // Description:
 //        top of chip
@@ -12,7 +12,7 @@
 
 `timescale 1ns/1ps
 
-module TSSwitch_top #(parameter tsn_chip_version = 32'h20200922)
+module TSSwitch_top 
 (
        i_clk,
        
@@ -286,15 +286,7 @@ wire                   w_gmii_rst_n_p4;
 wire                   w_rst_n;
 
 assign w_rst_n = i_hard_rst_n & i_button_rst_n & i_et_resetc_rst_n;
-reg        [31:0]       rv_tsn_chip_version/*synthesis noprune*/;
-always @(posedge i_clk or negedge w_rst_n) begin
-    if(!w_rst_n) begin
-        rv_tsn_chip_version <= 32'h0;
-    end
-    else begin
-        rv_tsn_chip_version <= tsn_chip_version;
-    end
-end
+
 signal_sync p0_type_sync(
 .i_clk(i_gmii_rxclk_p0),
 .i_rst_n(w_gmii_rst_n_p0),

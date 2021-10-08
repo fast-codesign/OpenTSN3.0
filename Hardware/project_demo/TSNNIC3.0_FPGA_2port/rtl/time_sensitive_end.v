@@ -61,7 +61,7 @@ module time_sensitive_end
         ov_rd_command_ack, 
         
         i_timer_rst,
-        o_init_led,
+        //o_init_led,
         o_fifo_overflow_pulse_host_rx, 
         o_fifo_underflow_pulse_host_rx,
         o_fifo_underflow_pulse_p0_rx,
@@ -123,7 +123,7 @@ input    	            i_rd_command_wr;
 output     [203:0]	    ov_rd_command_ack;
 
 input                   i_timer_rst;
-output    reg           o_init_led;
+//output    reg           o_init_led;
 
 output                  o_fifo_overflow_pulse_host_rx;
 output                  o_fifo_underflow_pulse_host_rx;
@@ -401,7 +401,7 @@ wire       [8:0]        wv_rc_regulation_value;
 wire       [8:0]        wv_be_regulation_value;
 wire       [8:0]        wv_map_req_regulation_value;
 wire       [7:0]        wv_port_type;
-always @(posedge i_clk or negedge i_rst_n) begin
+/*always @(posedge i_clk or negedge i_rst_n) begin
     if(!i_rst_n) begin
         o_init_led <= 1'h0;
     end
@@ -416,7 +416,7 @@ always @(posedge i_clk or negedge i_rst_n) begin
             o_init_led <= 1'h0;
         end
     end
-end 
+end */
 //adp2tsnchip 
 wire					w_gmii_dv_p0_adp2tsnchip;
 wire		[7:0]		wv_gmii_rxd_p0_adp2tsnchip;

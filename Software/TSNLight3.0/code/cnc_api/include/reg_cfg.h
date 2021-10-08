@@ -45,11 +45,11 @@
 
 
 //HCP配置
-#define HCP_MAP_BASE_ADDR     0x82000000  /*HCP第一跳映射表基地址，最高位表示有效位，默认有效*/
-#define HCP_REMAP_BASE_ADDR	  0x83000000  /*HCP最后一跳重映射表基地址，最高位表示有效位，默认有效，低14bit表示flowID，硬件根据低14bit进行索引*/
+//#define HCP_MAP_BASE_ADDR     0x82000000  /*HCP第一跳映射表基地址，最高位表示有效位，默认有效*/
+//#define HCP_REMAP_BASE_ADDR	  0x83000000  /*HCP最后一跳重映射表基地址，最高位表示有效位，默认有效，低14bit表示flowID，硬件根据低14bit进行索引*/
 
-//#define HCP_MAP_BASE_ADDR     0x00d00000  /*HCP第一跳映射表基地址，最高位表示有效位，默认有效*/
-//#define HCP_REMAP_BASE_ADDR	  0x00e00000  /*HCP最后一跳重映射表基地址，最高位表示有效位，默认有效，低14bit表示flowID，硬件根据低14bit进行索引*/
+#define HCP_MAP_BASE_ADDR     0x00d00000  /*HCP第一跳映射表基地址，最高位表示有效位，默认有效*/
+#define HCP_REMAP_BASE_ADDR	  0x00e00000  /*HCP最后一跳重映射表基地址，最高位表示有效位，默认有效，低14bit表示flowID，硬件根据低14bit进行索引*/
 
 
 #define HCP_PORT_TYPE_ADDR    0x80000000  /*HCP的端口类型地址，最高位表示有效位，默认有效*/

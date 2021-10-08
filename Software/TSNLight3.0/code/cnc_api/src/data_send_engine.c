@@ -88,9 +88,13 @@ int data_pkt_send_handle(u8* pkt,u16 len)
 	//指针往左偏移16字节，即tsmp头部，相应的报文长度需要增加tsmp头
 	pkt = pkt - 16;
 	len = len + 16;
-	printf("send pkt \n");
+	//printf("send pkt \n");
+	if(*(pkt+17)  == 0x04)
+	{
+		cnc_pkt_print(pkt,len);
+	}
+		
 	//cnc_pkt_print(pkt,len);
-	
 	strlen = sendto(sock_raw_fd, pkt, len, 0 , (struct sockaddr *)&sll, sizeof(sll));
 	if(len == -1)
 	{

@@ -569,7 +569,7 @@ u16 state_monitor_timeout(struct timeval tv)
 	time_interval = (tv_current.tv_sec - report_tv.tv_sec)*1000000 + (tv_current.tv_usec - report_tv.tv_usec);
 	if(time_interval > REPORT_INTERVAL)
 	{
-		send_remote_state();
+		//send_remote_state();
 		report_tv = tv;
 	}
 	

@@ -1,14 +1,14 @@
-// Copyright (C) 1953-2021 NUDT
-// file name - Makefile 
-// Version: Makefile_V1.0
-// Created:
-//         by - fenglin 
-//         at - 10.2020
-////////////////////////////////////////////////////////////////////////////
-// Description:
-//		  used to compile project to generate programming file.
-//				 
-///////////////////////////////////////////////////////////////////////////
+# Copyright (C) 1953-2021 NUDT
+# file name - Makefile
+# Version: Makefile_V3.0.0.20210702
+# Created:
+#         by - fenglin 
+#         at - 07.2021
+#//////////////////////////////////////////////////////////////////////////
+# Description:
+#		  used to compile project to generate programming file.
+#				 
+#/////////////////////////////////////////////////////////////////////////
 .PHONY: all project clean
 
 all: project run_synth run_fit run_asm run_sta run_eda
@@ -29,6 +29,10 @@ run_eda:
 	rm -rf *sopcinfo
 
 clean:
-	rm -rfv TSN_FPGA_4port.*
+	rm -rfv TSN_FPGA_4port.qpf
+	rm -rfv TSN_FPGA_4port.qsf
 	rm -rfv output_files
+	rm -rfv simulation
 	rm -rfv *db
+	rm -rfv cr_ie_info.json
+	rm -rfv serv_req_info.txt

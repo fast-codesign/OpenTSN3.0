@@ -1,5 +1,5 @@
-﻿因针对不同的平台或者不同的FPGA器件，所使用的IP核生成存在差异，所以ip核文件需要自行依据提供的IP核配置参数去生成ip核.
-TSN网卡硬件逻辑源码中总共使用到12个ip核文件，IP核详细配置参数如下：
+﻿因针对不同的平台或者不同的FPGA器件，所使用的IP核生成存在差异，所以IP核文件需要用户自行依据提供的IP核配置参数去生成IP核.
+TSN网卡硬件核心代码中总共使用到12个IP核文件，IP核详细配置参数如下：
 （1）IP核:2-port RAM
     ipcore_name:asdprf16x8_rq
     Operation Mode:With one read port and one write port

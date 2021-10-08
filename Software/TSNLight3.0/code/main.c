@@ -207,17 +207,17 @@ void net_run(u8 *pkt,u16 pkt_length)
     u8 pkt_type = get_pkt_type(pkt,pkt_length);
     if(pkt_type == 0x05)
     {
-		printf("***********************************ptp handle get pkt223\n");
+		//printf("***********************************ptp handle get pkt223\n");
         ptp_handle(pkt_length,pkt);
     }  
     else if(pkt_type == 0x01)
     {
-		printf("***********************************state monitor get pkt224\n");
+		//printf("***********************************state monitor get pkt224\n");
         state_monitor(pkt_length,pkt);
     }  
     else if(pkt_type == 0x00)
     {
-		printf("************************************arp reply get pkt225\n");
+		//printf("************************************arp reply get pkt225\n");
         arp_reply(pkt_length,pkt);
     }
 #endif

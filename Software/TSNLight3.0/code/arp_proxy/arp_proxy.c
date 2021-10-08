@@ -218,12 +218,12 @@ void arp_reply(u16 pkt_len,const unsigned char *packet_content)
 			printf("arp table dismatch!\n");
 			return;
 		}
-
+		printf("arp match table %d!\n",ret);
 		//generate an arp response
 		buid_arp_resp(pkt, pkt_len, ret);
-
+		cnc_pkt_print(pkt-16,pkt_len+16);
 		//发送报文
-		data_pkt_send_handle(pkt, pkt_len);
+		data_pkt_send_handle(pkt ,pkt_len);
 	}
 	
 	return ;

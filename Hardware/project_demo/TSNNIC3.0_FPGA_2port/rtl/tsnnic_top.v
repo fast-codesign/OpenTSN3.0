@@ -1,4 +1,16 @@
-module tsnnic_top(
+// Copyright (C) 1953-2020 NUDT
+// Verilog module name - tsnnic_top
+// Version: 20210629
+// Created:
+//         by - fenglin 
+//         at - 6.29.2021
+////////////////////////////////////////////////////////////////////////////
+// Description:
+//         the internet clock field of the chip is switched to the external PHY clock field
+//         send pkt data from gmii
+////////////////////////////////////////////////////////////////////////////
+module tsnnic_top
+(
        i_clk,
 	   
 	   i_hard_rst_n,
@@ -25,7 +37,7 @@ module tsnnic_top(
 	   o_gmii_tx_er_p1,
 	   o_gmii_tx_clk_p1,
        
-       o_init_led,
+       //o_init_led,
        pluse_s
 );
 input                   i_clk;					//125Mhz
@@ -35,7 +47,7 @@ input                   i_button_rst_n;
 input                   i_et_resetc_rst_n;
 
 output      		 	pluse_s;
-output      		 	o_init_led;
+//output      		 	o_init_led;
 
 input					i_gmii_rxclk_p1;
 input					i_gmii_dv_p1;
@@ -80,15 +92,6 @@ wire				    w_gmii_rst_n_host;
 wire				    w_rst_n;
 assign w_rst_n = i_hard_rst_n & i_button_rst_n & i_et_resetc_rst_n;
 
-reg        [31:0]       rv_tsn_chip_version/*synthesis noprune*/;
-always @(posedge i_clk or negedge w_core_rst_n) begin
-    if(!w_core_rst_n) begin
-        rv_tsn_chip_version <= 32'h0;
-    end
-    else begin
-        rv_tsn_chip_version <= rv_tsn_chip_version;
-    end
-end
 reset_sync core_reset_sync(
 .i_clk(i_clk),
 .i_rst_n(w_rst_n),
@@ -160,7 +163,7 @@ time_sensitive_end time_sensitive_end_tb(
 .ov_rd_command_ack(wv_rd_command_ack), 
 
 .i_timer_rst(w_timer_rst_gts2others),
-.o_init_led(o_init_led),
+//.o_init_led(o_init_led),
 .o_fifo_overflow_pulse_host_rx(), 
 .o_fifo_underflow_pulse_host_rx(),
 .o_fifo_underflow_pulse_p0_rx(),
